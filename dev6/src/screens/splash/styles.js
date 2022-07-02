@@ -7,7 +7,7 @@ export const FadeContainer = styled.View`
     background-color:black;
 `;
 
-export const Subtitulo = styled.Text`
+export const Subtitle = styled.Text`
     font-size: 48px;
     font-family: "Poppins";
     color: white;
@@ -27,7 +27,7 @@ background-color: black;
 z-index:-1;
 `;
 
-export const Imagem = styled.Image`
+export const Image = styled.Image`
     margin-top: 55%;
     margin-left: 30%;
     width:10rem;
@@ -35,7 +35,7 @@ export const Imagem = styled.Image`
     z-index:-1;
 `;
 
-export const TextoInput = styled.View`
+export const TextInput = styled.View`
     font-weight: bold;    
     font-family: "Poppins";
     font-size:64px;
