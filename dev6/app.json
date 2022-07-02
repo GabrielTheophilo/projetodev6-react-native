@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "dev6",
+    "slug": "dev6",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    }
+  },
+  "name": "dev6"
+}
