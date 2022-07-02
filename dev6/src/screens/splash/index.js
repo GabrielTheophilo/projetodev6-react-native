@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { View, Text, Button, Animated } from "react-native";
-import { Logo,Subtitulo,Container, Imagem, TextoInput, FadeContainer } from './styles';
+import { Logo,Subtitle,Container, Image, TextInput, FadeContainer } from './styles';
+import ClickToEnter from "../../components/clickToEnter";
 import GoogleFontLoader from 'react-google-font-loader';
-
+/*import {Navbar} from "../../components/navbar/index";*/
 
 const FadeInView = (props) => {
   const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
@@ -33,7 +34,7 @@ export const Splash = () => {
   
   
   return (
-    
+    /* <Navbar titulo="Navbar"></Navbar> */
     <Container>    
       <GoogleFontLoader
       fonts={[
@@ -49,12 +50,13 @@ export const Splash = () => {
       />
 
       <Logo source={require("../../../assets/img/fundo.png")} />
-    
+      
       <FadeInView>
-        <Imagem source={require("../../../assets/icon.png")} />
-        <TextoInput>Dev-6</TextoInput>
+        <Image source={require("../../../assets/icon.png")} />
+        <TextInput>Dev-6</TextInput>
+        <ClickToEnter text="Toque aqui para começar"></ClickToEnter>
         <FadeContainer>
-          <Subtitulo/>
+          <Subtitle/>
         </FadeContainer>
       </FadeInView>
     </Container>
