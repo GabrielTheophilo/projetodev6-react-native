@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { View, Text, Button, Animated } from "react-native";
 import { Logo,Subtitle,Container, Image, TextInput, FadeContainer } from './styles';
-import ClickToEnter from "../../components/clickToEnter";
+
 import GoogleFontLoader from 'react-google-font-loader';
 
 
@@ -54,7 +54,7 @@ export const Splash = () => {
       <FadeInView>
         <Image source={require("../../../assets/icon.png")} />
         <TextInput>Dev-6</TextInput>
-        <ClickToEnter text="Toque aqui para começar"></ClickToEnter>
+        
         <FadeContainer>
           <Subtitle/>
         </FadeContainer>
