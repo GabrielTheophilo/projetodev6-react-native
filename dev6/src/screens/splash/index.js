@@ -3,7 +3,7 @@ import { View, Text, Button, Animated } from "react-native";
 import { Logo,Subtitle,Container, Image, TextInput, FadeContainer } from './styles';
 import ClickToEnter from "../../components/clickToEnter";
 import GoogleFontLoader from 'react-google-font-loader';
-/*import {Navbar} from "../../components/navbar/index";*/
+
 
 const FadeInView = (props) => {
   const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
@@ -34,7 +34,7 @@ export const Splash = () => {
   
   
   return (
-    /* <Navbar titulo="Navbar"></Navbar> */
+   
     <Container>    
       <GoogleFontLoader
       fonts={[
