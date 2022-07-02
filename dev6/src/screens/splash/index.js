@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { View, Text, Button, Animated } from "react-native";
-import { Logo,Subtitulo,Container, Imagem, TextoInput, FadeContainer } from './styles';
+import { Logo,Subtitle,Container, Image, TextInput, FadeContainer } from './styles';
+
 import GoogleFontLoader from 'react-google-font-loader';
 
 
@@ -33,7 +34,7 @@ export const Splash = () => {
   
   
   return (
-    
+   
     <Container>    
       <GoogleFontLoader
       fonts={[
@@ -49,12 +50,13 @@ export const Splash = () => {
       />
 
       <Logo source={require("../../../assets/img/fundo.png")} />
-    
+      
       <FadeInView>
-        <Imagem source={require("../../../assets/icon.png")} />
-        <TextoInput>Dev-6</TextoInput>
+        <Image source={require("../../../assets/icon.png")} />
+        <TextInput>Dev-6</TextInput>
+        
         <FadeContainer>
-          <Subtitulo/>
+          <Subtitle/>
         </FadeContainer>
       </FadeInView>
     </Container>
