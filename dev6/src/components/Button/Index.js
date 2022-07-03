@@ -1,6 +1,5 @@
 import React from "react";
-import { ButtonFormat } from "./styles";
-import { TextButton } from "./styles";
+import { ButtonFormat, TextButton } from "./styles";
 
 export const Button = (props) => {
   return (

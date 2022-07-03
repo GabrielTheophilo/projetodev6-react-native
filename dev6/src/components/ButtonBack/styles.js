@@ -1,10 +1,9 @@
 import styled from "styled-components/native";
 
 export const ButtonFormat = styled.TouchableOpacity`
-  margin: 20px;
+  margin: 10px;
   height: 30px;
   width: auto;
-  padding: 0 10px 0 10px;
   align-self:center;
 `;
 

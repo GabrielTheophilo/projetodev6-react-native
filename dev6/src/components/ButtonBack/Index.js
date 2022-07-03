@@ -1,11 +1,9 @@
 import React from "react";
-import { ButtonFormat } from "./styles";
-import { TextButton } from "./styles";
+import { ButtonFormat, TextButton } from "./styles";
 
-export const ButtonBack = (props) => {
-
+export const ButtonBack = () => {
   function handleGoBack() {
-    console.log('pressed handleGoBack');
+    console.log("pressed handleGoBack");
   }
 
   return (
