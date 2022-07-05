@@ -1,5 +1,10 @@
 import styled from "styled-components/native";
 
+export const LoadingContainer = styled.View`
+    padding-top:100%;
+    padding-bottom:130%;
+    background-color:black;
+`;
 
 export const FadeContainer = styled.View`
 margin-left:6.5em;
@@ -35,7 +40,7 @@ height: 10rem;
 z-index:-1;
 `;
 
-export const TextInput = styled.View`
+export const TextInput = styled.Text`
 font-weight: bold;    
 font-family: "Poppins_700Bold";
 font-size:64px;
