@@ -11,11 +11,7 @@ import { NativeStackView } from "@react-navigation/native-stack";
 
 
 export const Splash = () => {
-  const nav = useNavigation();
 
-  function homeScreen() {
-    nav.navigate("Login");
-  }
   let [fontsLoaded] = useFonts({
     Poppins_700Bold,
   });
@@ -29,7 +25,7 @@ export const Splash = () => {
   return (
    
     <Container>  
-       <Pressable onPress={homeScreen}>
+       
       <Logo source={require("../../../assets/img/fundo.png")} />
       <FadeInView>
         <Image source={require("../../../assets/icon.png")} />
@@ -40,7 +36,7 @@ export const Splash = () => {
           <Subtitle/>
         </FadeContainer>
       </FadeInView>
-      </Pressable>
+
     </Container>
       
   );}
