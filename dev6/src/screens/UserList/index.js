@@ -4,8 +4,13 @@ import { Header } from "../../components/Header/Index";
 import { ButtonBack } from "../../components/ButtonBack/Index";
 import { TitleScreen } from "../../components/TitleScreen/Index";
 import InputText from "../../components/InputText/Index";
+import { useNavigation } from "@react-navigation/native";
 
-export const Users = () => {
+export const UserList = () => {
+  const nav = useNavigation();
+  function backScreen() {
+    nav.goBack();
+  }
   return (
     <Container>
       <Header name="Usuário" />
@@ -20,7 +25,7 @@ export const Users = () => {
         <InputText placeholder="cpf" />
         <InputText placeholder="data de nascimento" />
         <InputText placeholder="login" />
-        <ButtonBack />
+        <ButtonBack onPress={backScreen} />
       </Content>
     </Container>
   );

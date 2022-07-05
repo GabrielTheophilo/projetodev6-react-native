@@ -5,8 +5,15 @@ import InputPassword from "./../../components/InputPassword/Index";
 import { Button } from "./../../components/Button/Index";
 import { ButtonFormat, TextButton } from "./styles";
 import { useFonts, Poppins_500Medium } from "@expo-google-fonts/poppins";
+import { useNavigation } from "@react-navigation/native";
 
 export const Login = () => {
+  
+
+  const nav = useNavigation();
+  function homeScreen(){
+    nav.navigate("Home");
+  }
   useFonts({
     Poppins_500Medium,
   });
@@ -20,7 +27,7 @@ export const Login = () => {
         <InputPassword placeholder="senha" onPress={() => onPress} />
       </Content>
       <Content>
-        <Button onPress={() => console.log("handleToSave")} name="entrar" />
+        <Button onPress={homeScreen} name="entrar" />
         <ButtonFormat>
           <TextButton>esqueci minha senha</TextButton>
         </ButtonFormat>

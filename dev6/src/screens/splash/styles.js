@@ -6,6 +6,11 @@ export const LoadingContainer = styled.View`
     background-color:black;
 `;
 
+export const ButtonNavigate = styled.Button`
+    background-color:black;
+    
+`;
+
 export const FadeContainer = styled.View`
 margin-left:6.5em;
 margin-top:4em;

@@ -7,6 +7,10 @@ import { Button } from "./../../components/Button/Index";
 import InputPassword from "./../../components/InputPassword/Index";
 
 export const UserRegistration = () => {
+  const nav = useNavigation();
+  function backScreen() {
+    nav.goBack();
+  }
   return (
     <Container>
       <Content>
@@ -18,7 +22,7 @@ export const UserRegistration = () => {
         <InputText placeholder="login" />
         <InputPassword placeholder="senha" onPress={() => onPress} />
         <Button onPress={() => console.log("handleToSave")} name="salvar" />
-        <ButtonBack />
+        <ButtonBack onPress={backScreen}/>
       </Content>
     </Container>
   );
