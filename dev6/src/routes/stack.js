@@ -2,13 +2,13 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 
-import {Home} from "../screens/Home/index";
-import {Login} from "../screens/Login/index";
-import {PasswordRecovery} from "../screens/PasswordRecovery/index";
-import {UserEdit} from "../screens/UserEdit/index";
-import {UserList} from "../screens/UserList/index";
-import {UserRegistration} from "../screens/UserRegistration/index";
-import {Splash} from "../screens/Splash";
+import Home from "../screens/home";
+import Login from "../screens/Login";
+import PasswordRecovery from "../screens/PasswordRecovery";
+import UserEdit from "../screens/UserEdit";
+import UserList from "../screens/UserList";
+import UserRegistration from "../screens/UserRegistration";
+import Splash from "../screens/splash";
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
@@ -22,16 +22,16 @@ export function Stack() {
           headerShown: false,
         }}
       />
-      <Screen
-        name="Home"
-        component={Home}
+       <Screen
+        name="Login"
+        component={Login}
         options={{
           headerShown: false,
         }}
       />
       <Screen
-        name="Login"
-        component={Login}
+        name="Home"
+        component={Home}
         options={{
           headerShown: false,
         }}

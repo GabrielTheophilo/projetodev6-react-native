@@ -6,7 +6,7 @@ import {
   Poppins_400Regular,
 } from "@expo-google-fonts/poppins";
 
-export const Header = (props) => {
+const Header = (props) => {
   useFonts({
     Poppins_700Bold,
     Poppins_400Regular,

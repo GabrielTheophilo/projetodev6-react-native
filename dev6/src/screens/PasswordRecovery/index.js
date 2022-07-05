@@ -1,11 +1,11 @@
 import { Text } from "react-native";
 import { Container, Content } from "./../../components/GlobalStyles/styles";
-import { LogoWithTitle } from "./../../components/LogoWithTitle/Index";
-import { InputText } from "./../../components/InputText/Index";
-import { Button } from "./../../components/Button/Index";
-import { ButtonBack } from "./../../components/ButtonBack/Index";
+import LogoWithTitle from "./../../components/LogoWithTitle";
+import InputText from "./../../components/InputText";
+import Button from "./../../components/Button";
+import ButtonBack from "./../../components/ButtonBack";
 
-export const PasswordRecovery = () => {
+const PasswordRecovery = () => {
   return (
     <Container>
       <Content>
@@ -20,3 +20,5 @@ export const PasswordRecovery = () => {
     </Container>
   );
 };
+
+export default PasswordRecovery;

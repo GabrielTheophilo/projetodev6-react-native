@@ -1,17 +1,15 @@
 import { Container, Content } from "../../components/GlobalStyles/styles";
-import { LogoWithTitle } from "./../../components/LogoWithTitle/Index";
-import { InputText } from "./../../components/InputText/Index";
-import InputPassword from "./../../components/InputPassword/Index";
-import { Button } from "./../../components/Button/Index";
+import LogoWithTitle from "./../../components/LogoWithTitle";
+import InputText from "./../../components/InputText";
+import InputPassword from "./../../components/InputPassword";
+import Button from "./../../components/Button";
 import { ButtonFormat, TextButton } from "./styles";
 import { useFonts, Poppins_500Medium } from "@expo-google-fonts/poppins";
 import { useNavigation } from "@react-navigation/native";
 
-export const Login = () => {
-  
-
+const Login = () => {
   const nav = useNavigation();
-  function homeScreen(){
+  function homeScreen() {
     nav.navigate("Home");
   }
   useFonts({
@@ -35,3 +33,5 @@ export const Login = () => {
     </Container>
   );
 };
+
+export default Login;

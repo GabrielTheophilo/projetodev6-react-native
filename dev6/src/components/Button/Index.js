@@ -2,7 +2,7 @@ import React from "react";
 import { ButtonFormat, TextButton } from "./styles";
 import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
 
-export const Button = (props) => {
+const Button = (props) => {
   useFonts({
     Poppins_700Bold,
   });

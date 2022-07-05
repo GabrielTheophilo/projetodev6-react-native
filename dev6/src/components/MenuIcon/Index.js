@@ -3,7 +3,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Touchable, Title } from "./styles";
 import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
 
-export const MenuIcon = (props) => {
+const MenuIcon = (props) => {
   useFonts({
     Poppins_700Bold,
   });

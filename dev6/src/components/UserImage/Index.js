@@ -3,7 +3,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
-export const UserImage = (photo) => {
+const UserImage = (photo) => {
   return (
     <View style={styles.container}>
       {photo === true ? (

@@ -1,10 +1,10 @@
 import { Container, Content } from "../../components/GlobalStyles/styles";
-import { Header } from "../../components/Header/Index";
-import { MenuIcon } from "../../components/MenuIcon/Index";
-import { ButtonBack } from "../../components/ButtonBack/Index";
+import Header from "../../components/Header";
+import MenuIcon from "../../components/MenuIcon";
+import ButtonBack from "../../components/ButtonBack";
 import { useNavigation } from "@react-navigation/native";
 
-export const Home = () => {
+const Home = () => {
   const nav = useNavigation();
 
   function homeScreen() {
@@ -29,3 +29,5 @@ export const Home = () => {
     </Container>
   );
 };
+
+export default Home;

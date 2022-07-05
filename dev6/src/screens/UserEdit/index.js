@@ -1,13 +1,13 @@
 import { Container, Content } from "./../../components/GlobalStyles/styles";
-import { LogoWithTitle } from "./../../components/LogoWithTitle/Index";
-import { UserImage } from "./../../components/UserImage/Index";
-import { InputText } from "./../../components/InputText/Index";
-import { ButtonBack } from "./../../components/ButtonBack/Index";
-import { Button } from "./../../components/Button/Index";
-import InputPassword from "./../../components/InputPassword/Index";
+import LogoWithTitle from "./../../components/LogoWithTitle";
+import UserImage from "./../../components/UserImage";
+import InputText from "./../../components/InputText";
+import ButtonBack from "./../../components/ButtonBack";
+import Button from "./../../components/Button";
+import InputPassword from "./../../components/InputPassword";
 import { useNavigation } from "@react-navigation/native";
 
-export const UserEdit = () => {
+const UserEdit = () => {
   const nav = useNavigation();
   function backScreen() {
     nav.goBack();
@@ -28,3 +28,5 @@ export const UserEdit = () => {
     </Container>
   );
 };
+
+export default UserEdit;

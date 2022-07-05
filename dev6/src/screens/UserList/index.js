@@ -1,12 +1,12 @@
-import UserImage from "../../components/UserImage/Index";
+import UserImage from "../../components/UserImage";
 import { Container, Content } from "../../components/GlobalStyles/styles";
-import { Header } from "../../components/Header/Index";
-import { ButtonBack } from "../../components/ButtonBack/Index";
-import { TitleScreen } from "../../components/TitleScreen/Index";
-import InputText from "../../components/InputText/Index";
+import Header from "../../components/Header";
+import ButtonBack from "../../components/ButtonBack";
+import TitleScreen from "../../components/TitleScreen";
+import InputText from "../../components/InputText";
 import { useNavigation } from "@react-navigation/native";
 
-export const UserList = () => {
+const UserList = () => {
   const nav = useNavigation();
   function backScreen() {
     nav.goBack();
@@ -30,3 +30,5 @@ export const UserList = () => {
     </Container>
   );
 };
+
+export default UserList;
