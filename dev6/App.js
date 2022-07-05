@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { Splash } from "./src/screens/splash";
+import { Routes } from "./src/routes/index";
 
 export default function App() {
   return (
-        <Splash></Splash>
+      <>
+        <Routes/>
+      </>
   );
 }
 
