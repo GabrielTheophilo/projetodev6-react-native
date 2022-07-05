@@ -20,19 +20,20 @@ export const Text = styled.Text`
   align-self: flex-end;
   padding: 10px;
   margin-left: -120px;
+  font-family: "Poppins_700Bold";
 `;
 
 export const Imagem = styled.Image`
-    width:25;
-    height: 25;
-    z-index:-1;
+  width: 25;
+  height: 25;
+  z-index: -1;
 `;
 
 export const Content = styled.View`
-   flex-direction: row;
-   justify-content: space-between;
-   margin-top: 5px;
-   margin-left: 10px;
-   margin-right: 10px;
-   align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
 `;

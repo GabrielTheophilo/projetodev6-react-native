@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
+import { useFonts, Poppins_400Regular } from "@expo-google-fonts/poppins";
 
 const InputPassword = ({ placeholder }) => {
+  useFonts({
+    Poppins_400Regular,
+  });
+
   const [input, setInput] = useState("");
   const [hidePass, setHidePass] = useState(false);
 

@@ -8,14 +8,15 @@ export const ButtonFormat = styled.TouchableOpacity`
   margin: 10px;
   height: 30px;
   width: 60%;
-  align-self:center;
+  align-self: center;
 `;
 
 export const TextButton = styled.Text`
   font-size: 14px;
-  color: #FF7800;
+  color: #ff7800;
   font-weight: bold;
   align-self: center;
   padding-top: 3px;
   padding-bottom: 3px;
+  font-family: "Poppins_700Bold";
 `;

@@ -4,7 +4,7 @@ export const ButtonFormat = styled.TouchableOpacity`
   margin: 10px;
   height: 30px;
   width: auto;
-  align-self:center;
+  align-self: center;
 `;
 
 export const TextButton = styled.Text`
@@ -13,4 +13,5 @@ export const TextButton = styled.Text`
   align-self: center;
   padding-top: 3px;
   padding-bottom: 3px;
+  font-family: "Poppins_700Bold";
 `;
