@@ -37,7 +37,7 @@ export const Image = styled.Image`
 
 export const TextInput = styled.View`
     font-weight: bold;    
-    font-family: "Poppins";
+    font-family: "Poppins_700Bold";
     font-size:64px;
     color:white;
     margin-left: 25%;

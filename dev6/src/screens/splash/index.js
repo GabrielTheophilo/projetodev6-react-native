@@ -1,53 +1,19 @@
 import React, { useEffect, useRef } from "react";
-import { View, Text, Button, Animated } from "react-native";
+import { FadeInView } from "../../components/animation";
 import { Logo,Subtitle,Container, Image, TextInput, FadeContainer } from './styles';
+import { useFonts, Poppins_700Bold } from '@expo-google-fonts/poppins';
 
-import GoogleFontLoader from 'react-google-font-loader';
-
-
-const FadeInView = (props) => {
-  const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
-
-  useEffect(() => {
-    Animated.timing(
-      fadeAnim,
-      {
-        toValue: 1,
-        duration: 10000,
-      }
-    ).start();
-  }, [fadeAnim])
-  return (
-    <Animated.View                 // Special animatable View
-      style={{
-        ...props.style,
-        opacity: fadeAnim,
-      }}
-    >
-      {props.children}
-    </Animated.View>
-  );
-}
 
 
 export const Splash = () => {
-  
+  let [fontsLoaded] = useFonts({
+    Poppins_700Bold,
+  });
   
   return (
    
     <Container>    
-      <GoogleFontLoader
-      fonts={[
-        {
-          font: 'Poppins',
-          weights: [600],
-        },
-        {
-          font: 'Roboto Mono',
-          weights: [400, 700],
-        },
-      ]}
-      />
+     
 
       <Logo source={require("../../../assets/img/fundo.png")} />
       
@@ -59,6 +25,7 @@ export const Splash = () => {
           <Subtitle/>
         </FadeContainer>
       </FadeInView>
+      
     </Container>
     
   );
