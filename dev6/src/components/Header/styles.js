@@ -12,6 +12,7 @@ export const Greeting = styled.Text`
   color: #000;
   align-self: flex-end;
   padding: 10px;
+  font-family: "Poppins_400Regular";
 `;
 
 export const Text = styled.Text`

@@ -1,10 +1,10 @@
 import React from "react";
 import { ButtonFormat, TextButton } from "./styles";
-import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
+import { useFonts, Poppins_500Medium } from "@expo-google-fonts/poppins";
 
 export const ButtonBack = () => {
   useFonts({
-    Poppins_700Bold,
+    Poppins_500Medium,
   });
 
   function handleGoBack() {

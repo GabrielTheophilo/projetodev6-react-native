@@ -13,5 +13,5 @@ export const TextButton = styled.Text`
   align-self: center;
   padding-top: 3px;
   padding-bottom: 3px;
-  font-family: "Poppins_700Bold";
+  font-family: "Poppins_500Medium";
 `;
