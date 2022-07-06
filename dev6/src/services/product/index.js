@@ -6,15 +6,15 @@ export const getProduct = () => {
 
 }; 
 
-export const deleteProduct = () =>{
-
-​	return Api.delete('/produto').then((response) => response.data)
-
+export const postProduct = () => {
+    
+    ​	return Api.post('/produto').then((response) => response.data)
+    
 }; 
 
-export const postProduct = () => {
+export const deleteProduct = () =>{
 
-​	return Api.post('/produto').then((response) => response.data)
+​	return Api.delete('/produto/').then((response) => response.data)
 
 }; 
 
