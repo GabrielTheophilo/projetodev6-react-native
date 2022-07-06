@@ -1,9 +1,17 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
+import Button from "../../components/Button";
 
-const ProductModal = ({ nome, descricao, preco, qtdEstoque, foto }) => {
+const ProductModal = ({
+  nome,
+  descricao,
+  preco,
+  qtdEstoque,
+  foto,
+  onPress,
+}) => {
   return (
     <Container style={styles.container}>
       <Header />
@@ -17,12 +25,13 @@ const ProductModal = ({ nome, descricao, preco, qtdEstoque, foto }) => {
             <Text style={styles.txtTitle}>Descrição: {descricao}</Text>
           </View>
           <View style={styles.containerDscrpt}>
-            <Text style={styles.txtTitle}>Preço: {preco}</Text>
+            <Text style={styles.txtTitle}>Preço: {preco} R$</Text>
           </View>
           <View style={styles.containerDscrpt}>
             <Text style={styles.txtTitle}>Estoque: {qtdEstoque} unidades</Text>
           </View>
         </View>
+        <Button name="voltar" onPress={onPress}/>
       </Content>
     </Container>
   );
@@ -46,20 +55,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 10,
     borderWidth: 1,
-  },
-  btnBack: {
-    borderWidth: 1,
-    borderRadius: 10,
-    marginTop: 10,
-    width: "40%",
-    padding: "2%",
-    backgroundColor: "#000",
-  },
-  txtBtn: {
-    fontSize: 15,
-    fontWeight: "900",
-    textAlign: "center",
-    color: "#FF7800",
   },
 });
 
