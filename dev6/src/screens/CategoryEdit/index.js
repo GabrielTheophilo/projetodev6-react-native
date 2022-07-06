@@ -11,7 +11,7 @@ import {useState} from "react";
 
 
 
-const UserEdit = () => {
+const CategoryEdit = () => {
     const [categoriaNome, setCategoriaNome] = useState("");
     const [categoriaFoto, setCategoriaFoto] = useState("");
 
@@ -27,8 +27,6 @@ const UserEdit = () => {
         )
     }
 
-   
-    
     const nav = useNavigation();
     function backScreen() {
        nav.goBack();
@@ -37,7 +35,7 @@ const UserEdit = () => {
     <Container>
       <Content>
         <LogoWithTitle title="editar categoria" />
-       
+
         <TextInput placeholder="foto"  value={categoriaFoto} onChangeText={setCategoriaFoto}/>
         <TextInput placeholder="nome"  value={categoriaNome} onChangeText={setCategoriaNome}/>
         
@@ -48,4 +46,4 @@ const UserEdit = () => {
   );
 };
 
-export default UserEdit;
+export default CategoryEdit;

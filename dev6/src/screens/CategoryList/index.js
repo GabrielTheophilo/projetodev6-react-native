@@ -8,7 +8,7 @@ import { Container } from "../../components/GlobalStyles/styles";
 import  Header from "../../components/Header";
 import ButtonBack from "../../components/ButtonBack";
 import CardImage from "../../components/CardImage";
-import { CategoryText, TitleText, TextContainer } from "./styles";
+import {  TitleText, TextContainer } from "./styles";
 import TitleScreen from "../../components/TitleScreen";
 import { getCategoria, getCategoriaById, getCategoriaCount, postCategoria, putCategoria, deleteCategoria } from "../../services/category";
 
@@ -30,11 +30,13 @@ export const CategoryList = () => {
   
     const Items = ({ nome, foto }) => (
       <>
+
         <CardImage photo={{ uri: foto }} />
+        
         <TextContainer>
         <TitleText>{nome}</TitleText>
         </TextContainer>
-        
+       
       </>
     );
   
@@ -81,11 +83,12 @@ export const CategoryList = () => {
                     icon={true}
                     onPress={() => editScreen()}
                 />
+                
                 <FlatList
                     data={categoria}
                     renderItem={renderCategoria}
                     keyExtractor={(item) => item.id}
-                />
+                ></FlatList>
                 
                 <ButtonBack onPress={backScreen}></ButtonBack>
             </Container>
