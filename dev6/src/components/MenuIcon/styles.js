@@ -6,11 +6,11 @@ export const Title = styled.Text`
   font-weight: bold;
   padding-top: 3px;
   padding-bottom: 3px;
-
+  font-family: "Poppins_700Bold";
 `;
 
 export const Touchable = styled.TouchableOpacity`
-  align-items:center;
-  padding-top:5px;
+  align-items: center;
+  padding-top: 5px;
   padding-bottom: 5px;
 `;

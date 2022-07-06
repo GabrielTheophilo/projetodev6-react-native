@@ -1,12 +1,13 @@
 import React from "react";
-import Product from "./src/screens/Product";
 
-import { Splash } from "./src/screens/splash";
+import { Routes } from "./src/routes/index";
+import UserList from "./src/screens/UserList";
 
 export default function App() {
   return (
-    //<Splash></Splash>
-
-    <Product />
+    <>
+      {/*<Routes/>*/}
+      <UserList />
+    </>
   );
 }

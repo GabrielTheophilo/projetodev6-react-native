@@ -1,8 +1,12 @@
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Container, Touchable, Title } from "./styles";
+import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
 
-export const TitleScreen = (props) => {
+const TitleScreen = (props) => {
+  useFonts({
+    Poppins_700Bold,
+  });
   return (
     <Container>
       <Title>{props.title}</Title>

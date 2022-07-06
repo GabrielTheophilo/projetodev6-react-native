@@ -1,67 +1,53 @@
 import React, { useEffect, useRef } from "react";
-import { View, Text, Button, Animated } from "react-native";
-import { Logo,Subtitle,Container, Image, TextInput, FadeContainer } from './styles';
+import { Text, Button, Pressable } from "react-native";
+import { FadeInView } from "../../components/animation";
+import {
+  Logo,
+  Subtitle,
+  LoadingContainer,
+  Container,
+  Image,
+  TextInput,
+  FadeContainer,
+} from "./styles";
+import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
+import { PageLoading } from "../../components/pageLoading";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackView } from "@react-navigation/native-stack";
 
-import GoogleFontLoader from 'react-google-font-loader';
-
-
-const FadeInView = (props) => {
-  const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
+const Splash = () => {
+  const navigation = useNavigation();
 
   useEffect(() => {
-    Animated.timing(
-      fadeAnim,
-      {
-        toValue: 1,
-        duration: 10000,
-      }
-    ).start();
-  }, [fadeAnim])
-  return (
-    <Animated.View                 // Special animatable View
-      style={{
-        ...props.style,
-        opacity: fadeAnim,
-      }}
-    >
-      {props.children}
-    </Animated.View>
-  );
-}
+    setTimeout(function () {
+      navigation.navigate("Login");
+    }, 4000);
+  });
 
+  let [fontsLoaded] = useFonts({
+    Poppins_700Bold,
+  });
+  if (!fontsLoaded) {
+    return (
+      <LoadingContainer>
+        <PageLoading />
+      </LoadingContainer>
+    );
+  } else {
+    return (
+      <Container>
+        <Logo source={require("../../../assets/img/fundo.png")} />
+        <FadeInView>
+          <Image source={require("../../../assets/icon.png")} />
+          <TextInput>Dev-6</TextInput>
 
-export const Splash = () => {
-  
-  
-  return (
-   
-    <Container>    
-      <GoogleFontLoader
-      fonts={[
-        {
-          font: 'Poppins',
-          weights: [600],
-        },
-        {
-          font: 'Roboto Mono',
-          weights: [400, 700],
-        },
-      ]}
-      />
-
-      <Logo source={require("../../../assets/img/fundo.png")} />
-      
-      <FadeInView>
-        <Image source={require("../../../assets/icon.png")} />
-        <TextInput>Dev-6</TextInput>
-        
-        <FadeContainer>
-          <Subtitle/>
-        </FadeContainer>
-      </FadeInView>
-    </Container>
-    
-  );
+          <FadeContainer>
+            <Subtitle />
+          </FadeContainer>
+        </FadeInView>
+      </Container>
+    );
+  }
 };
 
 export default Splash;

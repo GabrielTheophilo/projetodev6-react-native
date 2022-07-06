@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-flex-direction: row;
+  flex-direction: row;
 `;
 
 export const Title = styled.Text`
@@ -9,11 +9,12 @@ export const Title = styled.Text`
   color: #000;
   font-weight: bold;
   align-self: center;
+  font-family: "Poppins_700Bold";
 `;
- 
+
 export const Imagem = styled.Image`
-    margin-right: 15px;
-    width:45;
-    height: 45;
-    z-index:-1;
+  margin-right: 15px;
+  width: 45;
+  height: 45;
+  z-index: -1;
 `;
