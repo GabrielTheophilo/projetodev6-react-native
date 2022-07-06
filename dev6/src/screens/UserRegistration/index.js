@@ -3,12 +3,12 @@ import LogoWithTitle from "../../components/LogoWithTitle";
 import ButtonBack from "../../components/ButtonBack";
 import Button from "../../components/Button";
 import { postUser } from "../../services/users";
-import { UserText } from "./styles";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useFonts, Poppins_400Regular } from "@expo-google-fonts/poppins";
 import InputPassword from "./../../components/InputPassword/Index";
 import InputText from "../../components/InputText";
+import { ContentRegistration } from "./styles";
 
 const UserRegistration = () => {
   useFonts({
@@ -43,9 +43,9 @@ const UserRegistration = () => {
 
   return (
     <Container>
-      <Content>
+      <ContentRegistration>
         <LogoWithTitle title="cadastrar usuário" />
-      </Content>
+      </ContentRegistration>
       <Content>
         <InputText
           placeholder="foto"

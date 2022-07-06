@@ -14,3 +14,8 @@ export const UserText = styled.TextInput`
   align-self: center;
   font-family: "Poppins_400Regular";
 `;
+
+export const ContentRegistration = styled.View`
+  margin-top: 15%;
+  padding: 8%;
+`;

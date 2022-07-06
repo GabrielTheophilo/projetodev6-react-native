@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { FlatList } from "react-native";
 import { useState, useEffect } from "react";
 import { getUser } from "../../services/users/index";
-import { Image } from "react-native";
+import { Image, Alert } from "react-native";
 import { styles } from "../../components/UserImage/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ContentButton, CusttomButton, UserText } from "./styles";
@@ -22,6 +22,36 @@ const UserList = () => {
   }
   const [user, setUser] = useState([]);
 
+  // function handleDeletePress() {
+  //   Alert.alert(
+  //     "Atenção",
+  //     "Você tem certeza que deseja excluir este item?",
+  //     [
+  //       {
+  //         text: "Não",
+  //         onPress: () => console.log("Cancel Pressed"),
+  //         style: "cancel",
+  //       },
+  //       { text: "Sim", onPress: () => console.log(`${props.id} deleted`) },
+  //     ],
+  //     { cancelable: false }
+  //   );
+  // }
+
+  const teste = () =>
+    Alert.alert("Alert Title", "My Alert Msg", [
+      {
+        text: "Ask me later",
+        onPress: () => console.log("Ask me later pressed"),
+      },
+      {
+        text: "Cancel",
+        onPress: () => console.log("Cancel Pressed"),
+        style: "cancel",
+      },
+      { text: "OK", onPress: () => console.log("OK Pressed") },
+    ]);
+
   useEffect(() => {
     getUser().then((response) => {
       console.log(response);
@@ -33,7 +63,7 @@ const UserList = () => {
     <>
       <Image source={{ uri: foto }} style={styles.photo} />
       <ContentButton>
-        <CusttomButton>
+        <CusttomButton onPress={teste}>
           <Ionicons name="trash" size={20} color="#ff7800" />
         </CusttomButton>
         <CusttomButton>
