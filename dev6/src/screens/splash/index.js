@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Text, Button, Pressable } from "react-native";
-import { FadeInView } from "../../components/animation";
+import { FadeInView } from "../../components/Animation";
 import {
   Logo,
   Subtitle,
@@ -11,9 +11,9 @@ import {
   FadeContainer,
 } from "./styles";
 import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
-import { PageLoading } from "../../components/pageLoading";
+import { PageLoading } from "../../components/PageLoading";
 import { useNavigation } from "@react-navigation/native";
-import { NativeStackView } from "@react-navigation/native-stack";
+import { AnimatedTransition } from "../../components/Animation";
 
 const Splash = () => {
   const navigation = useNavigation();
@@ -36,6 +36,7 @@ const Splash = () => {
   } else {
     return (
       <Container>
+        
         <Logo source={require("../../../assets/img/fundo.png")} />
         <FadeInView>
           <Image source={require("../../../assets/icon.png")} />
@@ -45,6 +46,7 @@ const Splash = () => {
             <Subtitle />
           </FadeContainer>
         </FadeInView>
+        
       </Container>
     );
   }

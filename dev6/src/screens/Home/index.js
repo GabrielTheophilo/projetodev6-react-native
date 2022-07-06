@@ -20,6 +20,9 @@ const Home = () => {
   function userScreen() {
     nav.push("UserList");
   }
+  function categoryScreen(){
+    nav.push("Category");
+  }
   function backScreen() {
     nav.goBack();
   }

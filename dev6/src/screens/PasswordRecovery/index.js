@@ -1,9 +1,9 @@
 import { Text } from "react-native";
 import { Container, Content } from "./../../components/GlobalStyles/styles";
-import LogoWithTitle from "./../../components/LogoWithTitle";
-import InputText from "./../../components/InputText";
-import Button from "./../../components/Button";
-import ButtonBack from "./../../components/ButtonBack";
+import LogoWithTitle from "../../components/LogoWithTitle";
+import InputText from "../../components/InputText";
+import Button from "../../components/Button";
+import ButtonBack from "../../components/ButtonBack";
 
 const PasswordRecovery = () => {
   return (

@@ -1,10 +1,10 @@
 import { Container, Content } from "./../../components/GlobalStyles/styles";
-import LogoWithTitle from "./../../components/LogoWithTitle";
-import UserImage from "./../../components/UserImage";
-import InputText from "./../../components/InputText";
-import ButtonBack from "./../../components/ButtonBack";
-import Button from "./../../components/Button";
-import InputPassword from "./../../components/InputPassword";
+import LogoWithTitle from "../../components/LogoWithTitle";
+import UserImage from "../../components/UserImage";
+import InputText from "../../components/InputText";
+import ButtonBack from "../../components/ButtonBack";
+import Button from "../../components/Button";
+import InputPassword from "../../components/InputPassword";
 import { useNavigation } from "@react-navigation/native";
 
 const UserEdit = () => {
