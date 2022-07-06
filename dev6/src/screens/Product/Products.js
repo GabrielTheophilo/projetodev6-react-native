@@ -5,7 +5,7 @@ const Products = (props) => {
   return (
     <View style={styles.containerFunction}>
       <Text style={styles.txt}>Produto: {props.data.nome} </Text>
-      <Text style={styles.txt}>Descrição :{props.data.descricao} </Text>
+      <Text style={styles.txt}>Descrição: {props.data.descricao} </Text>
     </View>
   );
 };
