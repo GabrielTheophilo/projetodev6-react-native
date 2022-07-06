@@ -34,18 +34,11 @@ const UserList = () => {
     });
   }, []);
 
-  // const deleteUser = async (id) => {
-  //   await deleteUser(id).then((response) => {
-  //     console.log(response);
-  //     setUser(response);
-  //   });
-  // };
-
   const Items = ({ foto, nome, dtNascimento, login, senha, cpf }) => (
     <>
       <Image source={{ uri: foto }} style={styles.photo} />
       <ContentButton>
-        <CusttomButton onPress={handleSubmit()}>
+        <CusttomButton>
           <Ionicons name="trash" size={20} color="#ff7800" />
         </CusttomButton>
         <CusttomButton>
