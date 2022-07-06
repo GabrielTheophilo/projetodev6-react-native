@@ -8,8 +8,13 @@ export const getUserById = (id) => {
   return api.getById(`/usuario/${id}`).then((response) => response.data);
 };
 
-export const postUser = () => {
-  return api.post(`/usuario`).then((response) => response.data);
+export const postUser = (user) => {
+  return api
+    .post(`/usuario`, user)
+    .then((response) => response.data)
+    .catch(function (error) {
+      console.log(error);
+    });
 };
 
 export const putUser = (id) => {

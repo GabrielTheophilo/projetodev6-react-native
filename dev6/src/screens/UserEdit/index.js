@@ -6,6 +6,7 @@ import ButtonBack from "../../components/ButtonBack";
 import Button from "../../components/Button";
 import InputPassword from "../../components/InputPassword";
 import { useNavigation } from "@react-navigation/native";
+import { ContentEdit } from "./styles";
 
 const UserEdit = () => {
   const nav = useNavigation();
@@ -14,14 +15,18 @@ const UserEdit = () => {
   }
   return (
     <Container>
-      <Content>
+      <ContentEdit>
         <LogoWithTitle title="editar usuário" />
-        <UserImage />
+      </ContentEdit>
+      <Content>
+        <InputText placeholder="foto" />
         <InputText placeholder="nome completo" />
         <InputText placeholder="cpf" />
         <InputText placeholder="data de nascimento" />
         <InputText placeholder="login" />
         <InputPassword placeholder="senha" onPress={() => onPress} />
+      </Content>
+      <Content>
         <Button onPress={() => console.log("handleToSave")} name="atualizar" />
         <ButtonBack onPress={backScreen} />
       </Content>
