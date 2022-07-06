@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Image, Modal, StyleSheet } from "react-native";
 import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -14,6 +14,12 @@ const ProductModal = ({
   onPress,
   id,
 }) => {
+  const [visibleModalEdit, setVisibleModalEdit] = useState(false);
+
+  function openModalEdit() {
+    setVisibleModalEdit(true);
+  }
+
   return (
     <Container style={styles.container}>
       <Header />
@@ -48,7 +54,7 @@ const ProductModal = ({
             <Ionicons name="trash" size={30} color="#ff7800" />
           </CusttomButton>
 
-          <CusttomButton>
+          <CusttomButton onPress={openModalEdit}>
             <Ionicons name="ios-pencil" size={30} color="#ff7800" />
           </CusttomButton>
 
@@ -56,6 +62,7 @@ const ProductModal = ({
             <Ionicons name="arrow-back-outline" size={30} color="#ff7800" />
           </CusttomButton>
         </View>
+        <Modal animationType="fade" visible={visibleModalEdit}></Modal>
       </Content>
     </Container>
   );
@@ -72,7 +79,7 @@ const styles = StyleSheet.create({
   },
   containerDscrpt: {
     flexDirection: "row",
-    margin: '2%',
+    margin: "2%",
   },
   txtTitle: {
     fontSize: 15,
