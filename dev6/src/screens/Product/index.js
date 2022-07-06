@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 import { Title, Touchable } from "./styles";
 import Products from "./Products";
 import Api from "../../services/api";
-import ButtonBack from "../../components/ButtonBack"
+import ButtonBack from "../../components/ButtonBack";
 
 const Product = (props) => {
   const [feed, setFeed] = useState([]);
@@ -28,10 +28,11 @@ const Product = (props) => {
           </Touchable>
         </View>
         <FlatList
+          keyExtractor={(item) => item.id}
           data={feed}
           renderItem={({ item }) => <Products data={item} />}
         />
-        <ButtonBack/>
+        <ButtonBack />
       </Content>
     </Container>
   );
