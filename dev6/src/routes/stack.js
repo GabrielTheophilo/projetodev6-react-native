@@ -8,7 +8,9 @@ import PasswordRecovery from "../screens/PasswordRecovery";
 import UserEdit from "../screens/UserEdit";
 import UserList from "../screens/UserList";
 import UserRegistration from "../screens/UserRegistration";
-import Splash from "../screens/splash";
+import Splash from "../screens/Splash";
+import Category from "../screens/CategoryList/index";
+import CategoryEdit from "../screens/CategoryEdit/index";
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
@@ -64,6 +66,18 @@ export function Stack() {
           headerShown: false,
         }}
       />
+      <Screen
+      name="Category"
+      component={Category}
+      options={{
+        headerShown: false,
+      }} />
+      <Screen
+      name="CategoryEdit"
+      component={CategoryEdit}
+      options={{
+        headerShown: false,
+      }} />
     
     </Navigator>
   );

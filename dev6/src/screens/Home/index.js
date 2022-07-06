@@ -3,8 +3,15 @@ import Header from "../../components/Header";
 import MenuIcon from "../../components/MenuIcon";
 import ButtonBack from "../../components/ButtonBack";
 import { useNavigation } from "@react-navigation/native";
+import { CusttomButton, TitleHome } from "./styles";
+import { Text } from "react-native";
+import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
 
 const Home = () => {
+  useFonts({
+    Poppins_700Bold,
+  });
+
   const nav = useNavigation();
 
   function homeScreen() {
@@ -12,6 +19,9 @@ const Home = () => {
   }
   function userScreen() {
     nav.push("UserList");
+  }
+  function categoryScreen(){
+    nav.push("Category");
   }
   function backScreen() {
     nav.goBack();
@@ -21,11 +31,24 @@ const Home = () => {
     <Container>
       <Header name="Usuário" />
       <Content>
-        <MenuIcon name="produtos" iconName="md-briefcase" />
-        <MenuIcon name="categorias" iconName="search-sharp" />
-        <MenuIcon name="usuários" iconName="ios-person-circle" onPress={userScreen} />
-        <ButtonBack onPress={backScreen}/>
+        <TitleHome>O que deseja acessar?</TitleHome>
       </Content>
+      <Content>
+        <MenuIcon name="produtos" iconName="md-briefcase" />
+      </Content>
+      <Content>
+        <MenuIcon name="categorias" iconName="search-sharp" />
+      </Content>
+      <Content>
+        <MenuIcon
+          name="usuários"
+          iconName="ios-person-circle"
+          onPress={userScreen}
+        />
+      </Content>
+      <CusttomButton>
+        <ButtonBack onPress={backScreen} />
+      </CusttomButton>
     </Container>
   );
 };

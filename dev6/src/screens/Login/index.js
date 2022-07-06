@@ -3,7 +3,7 @@ import LogoWithTitle from "./../../components/LogoWithTitle";
 import InputText from "./../../components/InputText";
 import InputPassword from "./../../components/InputPassword";
 import Button from "./../../components/Button";
-import { ButtonFormat, TextButton } from "./styles";
+import { ButtonFormat, ContentInfo, ContentLogin, TextButton } from "./styles";
 import { useFonts, Poppins_500Medium } from "@expo-google-fonts/poppins";
 import { useNavigation } from "@react-navigation/native";
 
@@ -17,19 +17,21 @@ const Login = () => {
   });
   return (
     <Container>
-      <Content>
+      <ContentLogin>
         <LogoWithTitle title="seja bem-vindo" />
-      </Content>
-      <Content>
-        <InputText placeholder="login" />
-        <InputPassword placeholder="senha" onPress={() => onPress} />
-      </Content>
-      <Content>
-        <Button onPress={homeScreen} name="entrar" />
-        <ButtonFormat>
-          <TextButton>esqueci minha senha</TextButton>
-        </ButtonFormat>
-      </Content>
+      </ContentLogin>
+      <ContentInfo>
+        <Content>
+          <InputText placeholder="login" />
+          <InputPassword placeholder="senha" onPress={() => onPress} />
+        </Content>
+        <Content>
+          <Button onPress={homeScreen} name="entrar" />
+          <ButtonFormat>
+            <TextButton>esqueci minha senha</TextButton>
+          </ButtonFormat>
+        </Content>
+      </ContentInfo>
     </Container>
   );
 };

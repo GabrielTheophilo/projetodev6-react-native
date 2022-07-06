@@ -1,5 +1,4 @@
 import { ActivityIndicator, View } from 'react-native';
-import styled from "styled-components/native";
 
 export const PageLoading = () => {
     return (
@@ -7,4 +6,5 @@ export const PageLoading = () => {
         <ActivityIndicator size="large" color="#FFFFFF" />
         </View>
     )
-}
+};
+export default PageLoading;
