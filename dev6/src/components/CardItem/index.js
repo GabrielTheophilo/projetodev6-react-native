@@ -11,8 +11,8 @@ import {
 } from "./styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const CardItem = ({ category }) => {
-  const { nome, foto } = category;
+const CardItem = ({ item }) => {
+  const { nome, foto } = item;
 
   return (
     <Container>
