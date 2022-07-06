@@ -22,3 +22,25 @@ color:black;
 
 `;
 
+export const CusttomButton = styled.TouchableOpacity`
+  margin-top: 5%;
+  margin-right: 2%;
+  margin-left: 2%;
+`;
+
+
+export const StyledButton = styled.Button`
+    font-size: 18px;
+    background-color: #FFF #important;
+    color: orange !important;
+    width: 20px;
+    height: 45px;
+    padding-top: 10px;
+    padding-bottom:10px;
+`;
+
+export const TitleContainer = styled.View`
+    margin-left: 22;
+
+`;
+
