@@ -6,7 +6,7 @@ export const Title = styled.Text`
   font-weight: bold;
   padding-top: 3px;
   padding-bottom: 3px;
-  font-family: "Poppins_700Bold";
+  font-family: "Poppins_500Medium";
 `;
 
 export const Touchable = styled.TouchableOpacity`

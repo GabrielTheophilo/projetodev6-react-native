@@ -15,3 +15,11 @@ export const TextButton = styled.Text`
   padding-bottom: 3px;
   font-family: "Poppins_500Medium";
 `;
+
+export const ContentLogin = styled.View`
+  margin-top: 15%;
+  padding: 8%;
+`;
+export const ContentInfo = styled.View`
+  margin-top: 15%;
+`;
