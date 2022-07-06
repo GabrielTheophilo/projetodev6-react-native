@@ -7,7 +7,7 @@ import UserList from "./src/screens/UserList";
 export default function App() {
   return (
     <>
-      <Product/>
+      <Routes/>
       
     </>
   );

@@ -20,7 +20,6 @@ const Products = (props) => {
       <Button name="ver mais" onPress={openModal} />
       <Modal animationType="slide" visible={visbileModal}>
         <ProductModal
-          id={props.data.id}
           foto={props.data.foto}
           nome={props.data.nome}
           descricao={props.data.descricao}

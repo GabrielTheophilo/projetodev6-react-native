@@ -13,9 +13,3 @@ export const Title = styled.Text`
 export const Touchable = styled.TouchableOpacity`
   align-self: center;
 `;
-
-export const CusttomButton = styled.TouchableOpacity`
-  margin-top: 5%;
-  margin-right: 2%;
-  margin-left: 2%;
-`;
