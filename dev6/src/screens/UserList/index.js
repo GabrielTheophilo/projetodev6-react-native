@@ -5,26 +5,21 @@ import TitleScreen from "../../components/TitleScreen";
 import { useNavigation } from "@react-navigation/native";
 import { FlatList } from "react-native";
 import { useState, useEffect } from "react";
-import {
-  getUser,
-  postUser,
-  putUser,
-  getByIdUser,
-  getUserCount,
-} from "../../services/users/index";
+import { getUser } from "../../services/users/index";
 import { Image } from "react-native";
 import { styles } from "../../components/UserImage/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ContentButton, CusttomButton, UserText } from "./styles";
-import { deleteUser } from "./../../services/users/index";
-import api from "../../services/api";
 
 const UserList = () => {
   const nav = useNavigation();
+
   function backScreen() {
     nav.goBack();
   }
-
+  function userRegistrationScreen() {
+    nav.navigate("UserRegistration");
+  }
   const [user, setUser] = useState([]);
 
   useEffect(() => {
@@ -71,7 +66,7 @@ const UserList = () => {
         <TitleScreen
           title="usuários"
           icon={true}
-          onPress={() => console.log("handleToAdd")}
+          onPress={userRegistrationScreen}
         />
         <FlatList
           data={user}

@@ -5,7 +5,10 @@ import Button from "../../components/Button";
 import { postUser } from "../../services/users";
 import { UserText } from "./styles";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import { useFonts, Poppins_400Regular } from "@expo-google-fonts/poppins";
+import InputPassword from "./../../components/InputPassword/Index";
+import InputText from "../../components/InputText";
 
 const UserRegistration = () => {
   useFonts({
@@ -33,10 +36,10 @@ const UserRegistration = () => {
     postUser(newUser);
   };
 
-  // const nav = useNavigation();
-  // function backScreen() {
-  //   nav.goBack();
-  // }
+  const nav = useNavigation();
+  function backScreen() {
+    nav.goBack();
+  }
 
   return (
     <Container>
@@ -44,32 +47,32 @@ const UserRegistration = () => {
         <LogoWithTitle title="cadastrar usuário" />
       </Content>
       <Content>
-        <UserText
+        <InputText
           placeholder="foto"
           value={usuarioFoto}
           onChangeText={setUsuarioFoto}
         />
-        <UserText
+        <InputText
           placeholder="nome"
           value={usuarioNome}
           onChangeText={setUsuarioNome}
         />
-        <UserText
+        <InputText
           placeholder="cpf"
           value={usuarioCpf}
           onChangeText={setUsuarioCpf}
         />
-        <UserText
+        <InputText
           placeholder="data de nascimento"
           value={usuarioDtNascimento}
           onChangeText={setUsuarioDtNascimento}
         />
-        <UserText
+        <InputText
           placeholder="login"
           value={usuarioLogin}
           onChangeText={setUsuarioLogin}
         />
-        <UserText
+        <InputPassword
           placeholder="senha"
           value={usuarioSenha}
           onChangeText={setUsuarioSenha}
@@ -77,7 +80,7 @@ const UserRegistration = () => {
       </Content>
       <Content>
         <Button onPress={HandlePost} name="salvar" />
-        <ButtonBack />
+        <ButtonBack onPress={backScreen} />
       </Content>
     </Container>
   );
