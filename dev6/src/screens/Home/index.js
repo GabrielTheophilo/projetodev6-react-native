@@ -13,6 +13,9 @@ const Home = () => {
   function userScreen() {
     nav.push("UserList");
   }
+  function categoryScreen(){
+    nav.push("Category");
+  }
   function backScreen() {
     nav.goBack();
   }
@@ -22,7 +25,7 @@ const Home = () => {
       <Header name="Usuário" />
       <Content>
         <MenuIcon name="produtos" iconName="md-briefcase" />
-        <MenuIcon name="categorias" iconName="search-sharp" />
+        <MenuIcon name="categorias" iconName="search-sharp" onPress={categoryScreen} />
         <MenuIcon name="usuários" iconName="ios-person-circle" onPress={userScreen} />
         <ButtonBack onPress={backScreen}/>
       </Content>

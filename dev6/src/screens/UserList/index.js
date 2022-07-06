@@ -3,7 +3,7 @@ import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
 import ButtonBack from "../../components/ButtonBack";
 import TitleScreen from "../../components/TitleScreen";
-//import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { FlatList, Text } from "react-native";
 import { useState, useEffect } from "react";
 import {
@@ -18,10 +18,10 @@ import { Image } from "react-native";
 import { styles } from "../../components/UserImage/styles";
 
 const UserList = () => {
-  // const nav = useNavigation();
-  // function backScreen() {
-  //   nav.goBack();
-  // }
+   const nav = useNavigation();
+   function backScreen() {
+     nav.goBack();
+   }
 
   const [user, setUser] = useState([]);
 
@@ -68,7 +68,7 @@ const UserList = () => {
           renderItem={renderUser}
           keyExtractor={(item) => item.id}
         />
-        <ButtonBack />
+        <ButtonBack onPress={backScreen} />
       </Content>
     </Container>
   );
