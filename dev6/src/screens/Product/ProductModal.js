@@ -12,6 +12,7 @@ const ProductModal = ({
   qtdEstoque,
   foto,
   onPress,
+  id,
 }) => {
   return (
     <Container style={styles.container}>
@@ -23,6 +24,10 @@ const ProductModal = ({
         <View style={styles.mainContainer}>
           <View style={styles.containerDscrpt}>
             <Text style={styles.txtTitle}>Nome: {nome} </Text>
+          </View>
+
+          <View style={styles.containerDscrpt}>
+            <Text style={styles.txtTitle}>ID: {id} </Text>
           </View>
 
           <View style={styles.containerDscrpt}>
@@ -40,15 +45,15 @@ const ProductModal = ({
 
         <View style={styles.containerBtnOptions}>
           <CusttomButton>
-            <Ionicons name="trash" size={35} color="#ff7800" />
+            <Ionicons name="trash" size={30} color="#ff7800" />
           </CusttomButton>
 
           <CusttomButton>
-            <Ionicons name="ios-pencil" size={35} color="#ff7800" />
+            <Ionicons name="ios-pencil" size={30} color="#ff7800" />
           </CusttomButton>
 
-          <CusttomButton>
-            <Ionicons name="arrow-back-outline" size={35} color="#ff7800" />
+          <CusttomButton onPress={onPress}>
+            <Ionicons name="arrow-back-outline" size={30} color="#ff7800" />
           </CusttomButton>
         </View>
       </Content>
@@ -67,7 +72,7 @@ const styles = StyleSheet.create({
   },
   containerDscrpt: {
     flexDirection: "row",
-    margin: 10,
+    margin: '2%',
   },
   txtTitle: {
     fontSize: 15,

@@ -26,6 +26,7 @@ const Products = (props) => {
           preco={props.data.preco}
           qtdEstoque={props.data.qtdEstoque}
           onPress={closeModal}
+          id={props.data.id}
         />
       </Modal>
     </View>
