@@ -9,7 +9,7 @@ import UserEdit from "../screens/UserEdit";
 import UserList from "../screens/UserList";
 import UserRegistration from "../screens/UserRegistration";
 import Splash from "../screens/Splash";
-import Category from "../screens/CategoryList/index";
+import CategoryList from "../screens/CategoryList/index";
 import CategoryEdit from "../screens/CategoryEdit/index";
 
 const { Screen, Navigator } = createNativeStackNavigator();
@@ -67,8 +67,8 @@ export function Stack() {
         }}
       />
       <Screen
-      name="Category"
-      component={Category}
+      name="CategoryList"
+      component={CategoryList}
       options={{
         headerShown: false,
       }} />

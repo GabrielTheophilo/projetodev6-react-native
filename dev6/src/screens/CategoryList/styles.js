@@ -22,8 +22,3 @@ color:black;
 
 `;
 
-export const ImageStyled = styled.Image`
-width: 500;
-height: 500px;
-
-`;
