@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
     height: 100,
     borderRadius: 100,
     alignItems: "center",
-    backgroundColor: "#cdcdcd",
     justifyContent: "center",
+    backgroundColor: "#cdcdcd",
   },
   photo: {
     width: 100,

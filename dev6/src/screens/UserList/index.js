@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import ButtonBack from "../../components/ButtonBack";
 import TitleScreen from "../../components/TitleScreen";
 //import { useNavigation } from "@react-navigation/native";
-import { FlatList } from "react-native";
+import { FlatList, Text } from "react-native";
 import { useState, useEffect } from "react";
 import {
   getUser,
@@ -14,6 +14,8 @@ import {
   getByIdUser,
   getUserCount,
 } from "../../services/users/index";
+import { Image } from "react-native";
+import { styles } from "../../components/UserImage/styles";
 
 const UserList = () => {
   // const nav = useNavigation();
@@ -26,31 +28,30 @@ const UserList = () => {
   useEffect(() => {
     getUser().then((response) => {
       console.log(response);
-      console.log(response.data);
-      setUser(response.data);
+      setUser(response);
     });
-  }, [user]);
-
-  const renderUser = ({ item }) => (
-    <Items
-      photo={item.foto}
-      name={item.nome}
-      cpf={item.cpf}
-      birthDate={item.dtNascimento}
-      login={item.login}
-      password={item.senha}
-    />
-  );
+  }, []);
 
   const Items = ({ foto, nome, dtNascimento, login, senha, cpf }) => (
     <>
-      <UserImage photo={foto} />
+      <Image source={{ uri: foto }} style={styles.photo} />
       <Text>{nome}</Text>
       <Text>{dtNascimento}</Text>
       <Text>{cpf}</Text>
       <Text>{login}</Text>
       <Text>{senha}</Text>
     </>
+  );
+
+  const renderUser = ({ item }) => (
+    <Items
+      foto={item.foto}
+      nome={item.nome}
+      cpf={item.cpf}
+      dtNascimento={item.dtNascimento}
+      login={item.login}
+      senha={item.senha}
+    />
   );
 
   return (
