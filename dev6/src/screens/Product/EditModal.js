@@ -2,17 +2,10 @@ import React from "react";
 import { StyleSheet, Image } from "react-native";
 import InputText from "../../components/InputText/Index";
 import { Container, Content } from "../../components/GlobalStyles/styles";
-<<<<<<< Updated upstream
-import Api from "../../services/api";
-import { CusttomButton } from "./styles";
-
-const EditModal = ({ foto }) => {
-=======
 import ButtonBack from "../../components/ButtonBack";
 import Button from "../../components/Button";
 
 const EditModal = (props) => {
->>>>>>> Stashed changes
   function HandlePut() {
     console.log('oi')
   }
@@ -28,12 +21,6 @@ const EditModal = (props) => {
         <Button name="Enviar edição" />
         <ButtonBack onPress={props.onPress} />
       </Content>
-<<<<<<< Updated upstream
-      <CusttomButton onPress={HandlePut}>
-        <Text> teste </Text>
-      </CusttomButton>
-=======
->>>>>>> Stashed changes
     </Container>
   );
 };

@@ -6,11 +6,8 @@ import Header from "../../components/Header";
 import { Title, Touchable } from "./styles";
 import Products from "./Products";
 import ButtonBack from "../../components/ButtonBack";
-<<<<<<< Updated upstream
-=======
 import { getProduct } from "../../services/product";
 import PostModal from "./PostModal";
->>>>>>> Stashed changes
 
 const Product = (props) => {
   const [feed, setFeed] = useState([]);
@@ -23,24 +20,17 @@ const Product = (props) => {
       }
     );
   }, []);
-<<<<<<< Updated upstream
-=======
 
   const openPostModal = () => {
     setPostModal(true);
   };
->>>>>>> Stashed changes
   return (
     <Container>
       <Header />
       <Content>
         <View style={styles.containerRow}>
           <Title>Produtos</Title>
-<<<<<<< Updated upstream
-          <Touchable onPress={props.onPress}>
-=======
           <Touchable onPress={openPostModal}>
->>>>>>> Stashed changes
             <Ionicons name="add" size={26} color="orange" />
           </Touchable>
         </View>
