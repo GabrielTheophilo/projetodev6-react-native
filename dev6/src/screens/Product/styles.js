@@ -37,7 +37,7 @@ flex-direction: row;
 margin: 2%;
 `
 
-export const txtTitle = styled.Text`
+export const TxtDscrpt = styled.Text`
 font-size: 15;
 font-weight: bold;
 `

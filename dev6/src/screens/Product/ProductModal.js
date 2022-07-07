@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, Modal, StyleSheet } from "react-native";
+import { View, Image, Modal, StyleSheet } from "react-native";
 import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -8,7 +8,7 @@ import {
   CusttomButton,
   ContainerBtnOptions,
   ContainerDscrpt,
-  txtTitle,
+  TxtDscrpt,
 } from "./styles";
 import EditModal from "./EditModal";
 import api from "../../services/api";
@@ -43,23 +43,23 @@ const ProductModal = ({
 
         <MainContainer>
           <ContainerDscrpt>
-            <Text style={styles.txtTitle}>Nome: {nome} </Text>
+            <TxtDscrpt>Nome: {nome} </TxtDscrpt>
           </ContainerDscrpt>
 
           <ContainerDscrpt>
-            <Text style={styles.txtTitle}>ID: {id} </Text>
+            <TxtDscrpt>ID: {id} </TxtDscrpt>
           </ContainerDscrpt>
 
           <ContainerDscrpt>
-            <Text style={styles.txtTitle}>Descrição: {descricao}</Text>
+            <TxtDscrpt>Descrição: {descricao}</TxtDscrpt>
           </ContainerDscrpt>
 
           <ContainerDscrpt>
-            <Text style={styles.txtTitle}>Preço: {preco} R$</Text>
+            <TxtDscrpt>Preço: {preco} R$</TxtDscrpt>
           </ContainerDscrpt>
 
           <ContainerDscrpt>
-            <Text style={styles.txtTitle}>Estoque: {qtdEstoque} unidades</Text>
+            <TxtDscrpt>Estoque: {qtdEstoque} unidades</TxtDscrpt>
           </ContainerDscrpt>
         </MainContainer>
 
