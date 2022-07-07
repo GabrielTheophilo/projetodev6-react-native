@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { View, Text, Image, Modal, StyleSheet } from "react-native";
+import { Image, Modal, StyleSheet } from "react-native";
 import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { CusttomButton } from "./styles";
+import {
+  MainContainer,
+  CusttomButton,
+  ContainerBtnOptions,
+  ContainerDscrpt,
+  TxtDscrpt,
+} from "./styles";
 import EditModal from "./EditModal";
 import api from "../../services/api";
 
@@ -22,44 +28,46 @@ const ProductModal = ({
     setVisibleModalEdit(true);
   }
 
-  function handleDelete(idDelete) {
-    api.delete(
+  function closeModalEdit() {
+    setVisibleModalEdit(false);
+  }
+
+  async function handleDelete(idDelete) {
+    await api.delete(
       `https://reactnative.herokuapp.com/reactnative/produto/${idDelete}`
     );
   }
 
-
-
   return (
-    <Container style={styles.container}>
+    <Container>
       <Header />
 
       <Content>
         <Image source={foto} style={styles.img} />
 
-        <View style={styles.mainContainer}>
-          <View style={styles.containerDscrpt}>
-            <Text style={styles.txtTitle}>Nome: {nome} </Text>
-          </View>
+        <MainContainer>
+          <ContainerDscrpt>
+            <TxtDscrpt>Nome: {nome} </TxtDscrpt>
+          </ContainerDscrpt>
 
-          <View style={styles.containerDscrpt}>
-            <Text style={styles.txtTitle}>ID: {id} </Text>
-          </View>
+          <ContainerDscrpt>
+            <TxtDscrpt>ID: {id} </TxtDscrpt>
+          </ContainerDscrpt>
 
-          <View style={styles.containerDscrpt}>
-            <Text style={styles.txtTitle}>Descrição: {descricao}</Text>
-          </View>
+          <ContainerDscrpt>
+            <TxtDscrpt>Descrição: {descricao}</TxtDscrpt>
+          </ContainerDscrpt>
 
-          <View style={styles.containerDscrpt}>
-            <Text style={styles.txtTitle}>Preço: {preco} R$</Text>
-          </View>
+          <ContainerDscrpt>
+            <TxtDscrpt>Preço: {preco} R$</TxtDscrpt>
+          </ContainerDscrpt>
 
-          <View style={styles.containerDscrpt}>
-            <Text style={styles.txtTitle}>Estoque: {qtdEstoque} unidades</Text>
-          </View>
-        </View>
+          <ContainerDscrpt>
+            <TxtDscrpt>Estoque: {qtdEstoque} unidades</TxtDscrpt>
+          </ContainerDscrpt>
+        </MainContainer>
 
-        <View style={styles.containerBtnOptions}>
+        <ContainerBtnOptions>
           <CusttomButton onPress={() => handleDelete(id)}>
             <Ionicons name="trash" size={30} color="#ff7800" />
           </CusttomButton>
@@ -71,10 +79,10 @@ const ProductModal = ({
           <CusttomButton onPress={onPress}>
             <Ionicons name="arrow-back-outline" size={30} color="#ff7800" />
           </CusttomButton>
-        </View>
+        </ContainerBtnOptions>
         <Modal animationType="fade" visible={visibleModalEdit}>
           {" "}
-          <EditModal foto={foto} />{" "}
+          <EditModal foto={foto} onPress={closeModalEdit} />{" "}
         </Modal>
       </Content>
     </Container>
@@ -82,22 +90,6 @@ const ProductModal = ({
 };
 
 const styles = StyleSheet.create({
-  containerBtnOptions: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    margin: "5%",
-  },
-  mainContainer: {
-    flexDirection: "column",
-  },
-  containerDscrpt: {
-    flexDirection: "row",
-    margin: "2%",
-  },
-  txtTitle: {
-    fontSize: 15,
-    fontWeight: "bold",
-  },
   img: {
     width: "100%",
     height: 320,

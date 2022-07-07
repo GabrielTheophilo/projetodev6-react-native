@@ -20,7 +20,7 @@ const Home = () => {
   function userScreen() {
     nav.push("UserList");
   }
-  function categoryScreen(){
+  function categoryScreen() {
     nav.push("CategoryList");
   }
   function backScreen() {
@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <Container>
-      <Header name="Usuário" />
+      <Header name="Admin" />
       <Content>
         <TitleHome>O que deseja acessar?</TitleHome>
       </Content>
@@ -37,7 +37,11 @@ const Home = () => {
         <MenuIcon name="produtos" iconName="md-briefcase" />
       </Content>
       <Content>
-        <MenuIcon name="categorias" iconName="search-sharp" onPress={categoryScreen}/>
+        <MenuIcon
+          name="categorias"
+          iconName="search-sharp"
+          onPress={categoryScreen}
+        />
       </Content>
       <Content>
         <MenuIcon

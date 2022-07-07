@@ -17,8 +17,13 @@ export const postUser = (user) => {
     });
 };
 
-export const putUser = (id) => {
-  return api.put(`/usuario/${id}`).then((response) => response.data);
+export const putUser = (id, user) => {
+  return api
+    .put(`/usuario/${id}`, user)
+    .then((response) => response.data)
+    .catch(function (error) {
+      console.log(error);
+    });
 };
 
 export const deleteUser = (id) => {

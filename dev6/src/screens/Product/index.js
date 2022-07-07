@@ -7,23 +7,34 @@ import { Title, Touchable } from "./styles";
 import Products from "./Products";
 import Api from "../../services/api";
 import ButtonBack from "../../components/ButtonBack";
+import { getProduct, postProduct } from "../../services/product";
 
 const Product = (props) => {
   const [feed, setFeed] = useState([]);
   useEffect(() => {
-    Api.get("https://reactnative.herokuapp.com/reactnative/produto").then(
-      (response) => {
-        setFeed(response.data);
-      }
-    );
+    getProduct().then((data) => {
+      setFeed(data);
+    });
   }, []);
+
+  const onAddNewProduct = () => {
+    postProduct({
+      categoriaId: null,
+      descricao: "aaaaa",
+      foto: "https://i.pinimg.com/564x/e6/50/1f/e6501f372bd31c4ecf57de93cc1304b6.jpg",
+      nome: "wallpaper nft",
+      id: 2,
+      preco: 999999,
+      qtdEstoque: 1,
+    });
+  };
   return (
     <Container>
       <Header />
       <Content>
         <View style={styles.containerRow}>
           <Title>Produtos</Title>
-          <Touchable onPress={props.onPress}>
+          <Touchable onPress={onAddNewProduct}>
             <Ionicons name="add" size={26} color="orange" />
           </Touchable>
         </View>

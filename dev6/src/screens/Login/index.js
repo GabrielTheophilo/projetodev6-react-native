@@ -27,9 +27,6 @@ const Login = () => {
         </Content>
         <Content>
           <Button onPress={homeScreen} name="entrar" />
-          <ButtonFormat>
-            <TextButton>esqueci minha senha</TextButton>
-          </ButtonFormat>
         </Content>
       </ContentInfo>
     </Container>
