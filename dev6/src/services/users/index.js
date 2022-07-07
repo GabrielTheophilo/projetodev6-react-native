@@ -5,7 +5,7 @@ export const getUser = () => {
 };
 
 export const getUserById = (id) => {
-  return api.getById(`/usuario/${id}`).then((response) => response.data);
+  return api.get(`/usuario/${id}`).then((response) => response.data);
 };
 
 export const postUser = (user) => {

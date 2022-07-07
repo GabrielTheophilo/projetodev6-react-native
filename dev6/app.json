@@ -12,6 +12,9 @@
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "package": "com.android.devsix"
     }
   },
   "name": "dev6"
