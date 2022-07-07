@@ -12,7 +12,8 @@ import {useState,useEffect} from "react";
 import styled from "styled-components/native"
 
 const StyledImage = styled.Image`
-  width:200;
+margin-left: 40;  
+width:200;
   height:200;
 `;
 
@@ -45,8 +46,9 @@ const CategoryAdd = () => {
         <InputText placeholder="nome"  value={categoriaNome} onChangeText={setCategoriaNome}/>
         
         <Button name="salvar" onPress={HandlePost} />
-        <ButtonBack onPress={backScreen} />
+        
       </Content>
+      <ButtonBack onPress={backScreen} />
     </Container>
   );
 };
