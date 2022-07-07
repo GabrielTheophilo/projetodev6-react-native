@@ -9,12 +9,17 @@ import InputText from "../../components/InputText";
 import { useNavigation } from "@react-navigation/native";
 import { getCategoriaById, postCategoria } from "../../services/category";
 import {useState,useEffect} from "react";
+import styled from "styled-components/native"
 
-
+const StyledImage = styled.Image`
+  width:200;
+  height:200;
+`;
 
 const CategoryAdd = () => {
     const [categoriaNome, setCategoriaNome] = useState("");
     const [categoriaFoto, setCategoriaFoto] = useState("");
+    
 
     const novaCategoria = {
         nome: categoriaNome,
@@ -35,7 +40,7 @@ const CategoryAdd = () => {
     <Container>
       <Content>
         <LogoWithTitle title="Adicionar categoria" />
-
+        <StyledImage source={ categoriaFoto ? { uri:categoriaFoto } : null }></StyledImage>
         <InputText placeholder="foto"  value={categoriaFoto} onChangeText={setCategoriaFoto}/>
         <InputText placeholder="nome"  value={categoriaNome} onChangeText={setCategoriaNome}/>
         

@@ -8,7 +8,7 @@ import { Container } from "../../components/GlobalStyles/styles";
 import  Header from "../../components/Header";
 import ButtonBack from "../../components/ButtonBack";
 import CardImage from "../../components/CardImage";
-import {  TitleText, TextContainer, TitleContainer, CusttomButton, StyledButton } from "./styles";
+import { ImageContainer, TitleText, TextContainer, TitleContainer, CusttomButton, StyledButton, ContainerFlex } from "./styles";
 import TitleScreen from "../../components/TitleScreen";
 import { getCategoria, getCategoriaById, getCategoriaCount, postCategoria, putCategoria, deleteCategoria } from "../../services/category";
 import {Modal} from "react-native";
@@ -39,22 +39,26 @@ export const CategoryList = () => {
       </TextContainer>
       <Button name="Acessar categoria" onPress={()=> setModalVisible(true)}></Button>
       <Modal animationType="slide"  visible={modalVisible} > 
-      <Header></Header>
+      <Header name="Admin"></Header>
       <Container>
+        <ImageContainer>
       <CardImage photo={{ uri: foto }} />
+      </ImageContainer>
       <TextContainer>
       <TitleText>{nome}</TitleText>
       <TitleText>{id}</TitleText>
       </TextContainer>
+      <ContainerFlex>
       <CusttomButton onPress={()=> deleteCategoria(id)}>
-      <Ionicons name="trash" size={20} color="#ff7800" />
+      <Ionicons name="trash" size={26} color="#ff7800" />
       </CusttomButton>
       <CusttomButton onPress={()=>{
         editScreen(id);
         setModalVisible(false);
         }}>
-          <Ionicons name="ios-pencil" size={20} color="#ff7800"/>
+          <Ionicons name="ios-pencil" size={26} color="#ff7800"/>
       </CusttomButton>
+      </ContainerFlex>
       <Button name="Voltar" onPress={()=> setModalVisible(false)}></Button>
       </Container>
       
@@ -103,7 +107,7 @@ export const CategoryList = () => {
           }else {
             return (            
               <Container>
-              <Header></Header>
+              <Header name="Admin"></Header>
               <TitleContainer>
               <TitleScreen
               title="categorias"

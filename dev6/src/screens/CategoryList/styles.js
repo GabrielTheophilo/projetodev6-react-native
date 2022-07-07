@@ -8,7 +8,16 @@ font-family: Poppins_500Medium;
 font-size: 16px;
 `;
 
+export const ImageContainer = styled.View`
+  margin-top: 130;
+`;
 
+export const ContainerFlex = styled.View`
+  display: flex;
+  flex-direction: row;
+  margin-left: 120;
+
+`;
 export const TextContainer = styled.View`
 align-items: center;
 justify-content:center;
