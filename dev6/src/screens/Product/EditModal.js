@@ -7,7 +7,7 @@ import { CusttomButton } from "./styles";
 
 const EditModal = ({ foto }) => {
   function HandlePut() {
-    console.log('oi')
+    console.log("oi");
   }
   return (
     <Container>

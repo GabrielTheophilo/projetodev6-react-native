@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Image, Modal, StyleSheet } from "react-native";
+import {Image, Modal, StyleSheet } from "react-native";
 import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
