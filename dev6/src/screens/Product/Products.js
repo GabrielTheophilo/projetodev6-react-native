@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, Image, StyleSheet, Modal } from "react-native";
+import {Image, StyleSheet, Modal } from "react-native";
 import ProductModal from "./ProductModal";
 import Button from "../../components/Button";
+import { TitleProduct, Container } from "./styles";
 
 const Products = (props) => {
   const [visbileModal, setVibleModal] = useState(false);
@@ -14,9 +15,9 @@ const Products = (props) => {
   }
 
   return (
-    <View style={styles.container}>
+    <Container>
       <Image source={props.data.foto} style={styles.img} />
-      <Text style={styles.titleProduct}>Produto: {props.data.nome} </Text>
+      <TitleProduct>Produto: {props.data.nome} </TitleProduct>
       <Button name="ver mais" onPress={openModal} />
       <Modal animationType="slide" visible={visbileModal}>
         <ProductModal
@@ -29,23 +30,10 @@ const Products = (props) => {
           id={props.data.id}
         />
       </Modal>
-    </View>
+    </Container>
   );
 };
 const styles = StyleSheet.create({
-  container: {
-    height: "80%",
-    width: "80%",
-    padding: "2%",
-    margin: 30,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  titleProduct: {
-    fontSize: 20,
-    fontWeight: "900",
-    textAlign: "center",
-  },
   img: {
     width: "100%",
     height: 320,

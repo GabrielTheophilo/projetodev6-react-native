@@ -23,7 +23,7 @@ const UserRegistration = () => {
   const [usuarioSenha, setUsuarioSenha] = useState("");
 
   const newUser = {
-    id: 123,
+    ativo: true,
     nome: usuarioNome,
     foto: usuarioFoto,
     dtNascimento: usuarioDtNascimento,

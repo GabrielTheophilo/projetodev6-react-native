@@ -20,4 +20,38 @@ export const CusttomButton = styled.TouchableOpacity`
   margin-left: 2%;
 `;
 
+/* ====================================================================== */
 
+export const MainContainer = styled.View`
+  flex-direction: column;
+`;
+export const ContainerBtnOptions = styled.View`
+  margin: 5%;
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
+export const ContainerDscrpt = styled.View`
+  flex-direction: row;
+  margin: 2%;
+`;
+
+export const TxtDscrpt = styled.Text`
+  font-size: 15;
+  font-weight: bold;
+`;
+
+export const TitleProduct = styled.Text`
+  font-size: 20;
+  font-weight: 900;
+  text-align: center;
+`;
+
+export const Container = styled.View`
+height: 80%;
+width: 80%;
+padding: 2%;
+margin: 30px;
+justify-content: center;
+align-items: center;
+`
