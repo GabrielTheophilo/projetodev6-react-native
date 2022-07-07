@@ -1,35 +1,80 @@
-import React from "react";
-import { StyleSheet, Image, Text } from "react-native";
+import React, { useState } from "react";
+import { Alert } from "react-native";
 import InputText from "../../components/InputText/Index";
 import { Container, Content } from "../../components/GlobalStyles/styles";
-import Api from "../../services/api";
-import { CusttomButton } from "./styles";
+import ButtonBack from "../../components/ButtonBack";
+import Button from "../../components/Button";
+import { postProduct } from "../../services/product";
 
 const PostModal = () => {
+  const [url, setUrl] = useState("");
+  const [productName, setProductName] = useState("");
+  const [description, setDescription] = useState("");
+  const [productValue, setProductValue] = useState("");
+  const [quantity, setQuantity] = useState("");
+
+  const newProduct = {
+    foto: url,
+    nome: productName,
+    descricao: description,
+    preco: productValue,
+    qtdEstoque: quantity,
+  };
+
+  const AddNewProduct = async () => {
+    if (
+      newProduct.foto == "" ||
+      newProduct.nome == "" ||
+      newProduct.descricao == "" ||
+      newProduct.preco == "" ||
+      newProduct.qtdEstoque == ""
+    ) {
+      Alert.alert("PREENCHA TODOS OS CAMPOS");
+      alert("PREENCHA TODOS OS CAMPOS");
+    } else {
+      await postProduct(newProduct);
+      setUrl("");
+      setDescription("");
+      setProductName("");
+      setProductValue("");
+      setQuantity("");
+      Alert.alert("PRODUTO ADICIONADO COM SUCESSO");
+      alert("PRODUTO ADICIONADO COM SUCESSO");
+    }
+  };
+
   return (
     <Container>
       <Content>
-        <Image source={foto} style={styles.img} />
-        <InputText placeholder="Nova url do produto"></InputText>
-        <InputText placeholder="Digite o novo nome do produto"></InputText>
-        <InputText placeholder="Digite a nova descrição do produto"></InputText>
-        <InputText placeholder="Digite o novo valor do produto"></InputText>
-        <InputText placeholder="Nova quantidade em estoque do produto"></InputText>
+        <InputText
+          placeholder="URL do produto"
+          value={url}
+          onChangeText={setUrl}
+        />
+        <InputText
+          placeholder="Nome do produto"
+          value={productName}
+          onChangeText={setProductName}
+        />
+        <InputText
+          placeholder="Descrição do produto"
+          value={description}
+          onChangeText={setDescription}
+        />
+        <InputText
+          placeholder="Valor do produto"
+          value={productValue}
+          onChangeText={setProductValue}
+        />
+        <InputText
+          placeholder="Quantidade em estoque"
+          value={quantity}
+          onChangeText={setQuantity}
+        />
+        <Button name="salvar" onPress={AddNewProduct} />
+        <ButtonBack />
       </Content>
-      <CusttomButton onPress={HandlePut}>
-        <Text> teste </Text>
-      </CusttomButton>
     </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  img: {
-    width: "100%",
-    height: 320,
-    alignItems: "center",
-    borderRadius: 10,
-    borderWidth: 1,
-  },
-});
 export default PostModal;

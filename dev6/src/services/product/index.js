@@ -12,6 +12,6 @@ export const deleteProduct = () => {
   return Api.delete("/produto/").then((response) => response.data);
 };
 
-export const putProduct = () => {
-  return Api.put("/produto").then((response) => response.data);
+export const putProduct = (id, body) => {
+  return Api.put(`/produto/${id}`, body).then((response) => response.data).catch(function(error){console.log(error)});
 };

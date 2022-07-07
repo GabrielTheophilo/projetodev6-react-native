@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, Modal, StyleSheet } from "react-native";
+import { View, Text, Image, Modal, StyleSheet, Alert } from "react-native";
 import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -32,10 +32,12 @@ const ProductModal = ({
     setVisibleModalEdit(false);
   }
 
-  async function handleDelete(idDelete) {
-    await api.delete(
+  function handleDelete(idDelete) {
+    api.delete(
       `https://reactnative.herokuapp.com/reactnative/produto/${idDelete}`
     );
+    alert("PRODUTO EXCLUIDO");
+    Alert.alert("PRODUTO EXCLUIDO");
   }
 
   return (
@@ -81,8 +83,7 @@ const ProductModal = ({
           </CusttomButton>
         </ContainerBtnOptions>
         <Modal animationType="fade" visible={visibleModalEdit}>
-          {" "}
-          <EditModal foto={foto} onPress={closeModalEdit} />{" "}
+          <EditModal foto={foto} id={id} onPress={closeModalEdit} />
         </Modal>
       </Content>
     </Container>
