@@ -15,7 +15,7 @@ export const ImageContainer = styled.View`
 export const ContainerFlex = styled.View`
   display: flex;
   flex-direction: row;
-  margin-left: 120;
+  margin-left: 140;
 
 `;
 export const TextContainer = styled.View`
