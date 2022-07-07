@@ -86,17 +86,6 @@ const ProductModal = ({
 };
 
 const styles = StyleSheet.create({
-  mainContainer: {
-    flexDirection: "column",
-  },
-  containerDscrpt: {
-    flexDirection: "row",
-    margin: "2%",
-  },
-  txtTitle: {
-    fontSize: 15,
-    fontWeight: "bold",
-  },
   img: {
     width: "100%",
     height: 320,
