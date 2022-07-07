@@ -11,7 +11,7 @@ import Splash from "../screens/Splash";
 import CategoryList from "../screens/CategoryList/index";
 import CategoryEdit from "../screens/CategoryEdit/index";
 import CategoryAdd from "../screens/CategoryAdd/index";
-
+import Product from "../screens/Product";
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
@@ -88,7 +88,13 @@ export function Stack() {
           headerShown: false,
         }}
       />
-
+      <Screen
+        name="Product"
+        component={Product}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Navigator>
   );
 }

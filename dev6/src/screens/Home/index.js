@@ -26,6 +26,9 @@ const Home = () => {
   function backScreen() {
     nav.goBack();
   }
+  function productScreen() {
+    nav.push("Product");
+  }
 
   return (
     <Container>
@@ -34,7 +37,11 @@ const Home = () => {
         <TitleHome>O que deseja acessar?</TitleHome>
       </Content>
       <Content>
-        <MenuIcon name="produtos" iconName="md-briefcase" />
+        <MenuIcon
+          name="produtos"
+          iconName="md-briefcase"
+          onPress={productScreen}
+        />
       </Content>
       <Content>
         <MenuIcon

@@ -48,10 +48,10 @@ export const TitleProduct = styled.Text`
 `;
 
 export const Container = styled.View`
-height: 80%;
-width: 80%;
-padding: 2%;
-margin: 30px;
-justify-content: center;
-align-items: center;
-`
+  height: 80%;
+  width: 80%;
+  padding: 2%;
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
+`;

@@ -8,6 +8,7 @@ import Products from "./Products";
 import ButtonBack from "../../components/ButtonBack";
 import { getProduct } from "../../services/product";
 import PostModal from "./PostModal";
+import { useNavigation } from "@react-navigation/native";
 
 const Product = (props) => {
   const [feed, setFeed] = useState([]);
@@ -22,9 +23,14 @@ const Product = (props) => {
   const openPostModal = () => {
     setPostModal(true);
   };
+
+  const nav = useNavigation();
+  function backScreen() {
+    nav.goBack();
+  }
   return (
     <Container>
-      <Header />
+      <Header name="Admin" />
       <Content>
         <View style={styles.containerRow}>
           <Title>Produtos</Title>
@@ -36,7 +42,9 @@ const Product = (props) => {
           data={feed}
           renderItem={({ item }) => <Products data={item} />}
         />
-        <ButtonBack />
+
+        <ButtonBack onPress={backScreen} />
+
         <Modal animationType="slide" visible={postModal}>
           <PostModal />
         </Modal>
