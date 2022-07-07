@@ -14,11 +14,9 @@ const Product = (props) => {
   const [postModal, setPostModal] = useState(false);
 
   useEffect(() => {
-    Api.get("https://reactnative.herokuapp.com/reactnative/produto").then(
-      (response) => {
-        setFeed(response.data);
-      }
-    );
+    getProduct().then((data) => {
+      setFeed(data);
+    });
   }, []);
 
   const openPostModal = () => {
