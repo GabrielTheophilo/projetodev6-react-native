@@ -13,8 +13,6 @@ const EditModal = (props) => {
   const [productValue, setProductValue] = useState("");
   const [quantity, setQuantity] = useState("");
 
-  const productId = useState(props.id);
-
   const newProduct = {
     categoriaId: null,
     descricao: description,
@@ -25,10 +23,11 @@ const EditModal = (props) => {
   };
 
   function HandlePut() {
-    putProduct(props.id, newProduct).then((response) => {
-      console.log(response);
+    putProduct(props.id, newProduct)
+    .then((response) => {
+      console.log(props.id);
     });
-    // console.log(newProduct);
+    console.log(newProduct);
   }
   return (
     <Container>

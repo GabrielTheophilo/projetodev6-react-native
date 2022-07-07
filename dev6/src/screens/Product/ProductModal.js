@@ -77,7 +77,7 @@ const ProductModal = ({
           </CusttomButton>
         </View>
         <Modal animationType="fade" visible={visibleModalEdit}>
-          <EditModal foto={foto} onPress={closeModalEdit} />
+          <EditModal foto={foto} id={id} onPress={closeModalEdit} />
         </Modal>
       </Content>
     </Container>
