@@ -8,55 +8,77 @@ import InputPassword from "../../components/InputPassword";
 import InputText from "../../components/InputText";
 import { useNavigation } from "@react-navigation/native";
 import { getCategoriaById, putCategoria } from "../../services/category";
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
+const CategoryEdit = ({ route }) => {
+  const [categoriaNome, setCategoriaNome] = useState("");
+  const [categoriaFoto, setCategoriaFoto] = useState("");
 
+  const [categoriaId] = useState(route.params.id);
 
-const CategoryEdit = ({route}) => {
-    const [categoriaNome, setCategoriaNome] = useState("");
-    const [categoriaFoto, setCategoriaFoto] = useState("");
-    
-    const [categoriaId] = useState(route.params.id);
-    
-    const novaCategoria = {
-        nome: categoriaNome,
-        foto: categoriaFoto,
-    }
+  const novaCategoria = {
+    nome: categoriaNome,
+    foto: categoriaFoto,
+  };
 
-    const HandlePost = () => {
-        putCategoria(
-            categoriaId ,novaCategoria
-        ).then((response)=>{
-          nav.goBack();
-        })
-    }
+  const HandlePost = () => {
+    putCategoria(categoriaId, novaCategoria).then((response) => {
+      nav.goBack();
+    });
+  };
 
-    const nav = useNavigation();
-    function backScreen() {
-       nav.goBack();
-    }
+  const nav = useNavigation();
+  function backScreen() {
+    nav.goBack();
+  }
 
-
-
-    useEffect(() => {
-      getCategoriaById(categoriaId).then((response) => {
-        console.log(response);
-        setCategoriaNome(response.nome);
-        setCategoriaFoto(response.foto);
-      });
-    }, []);
-    
-        
+  useEffect(() => {
+    getCategoriaById(categoriaId).then((response) => {
+      console.log(response);
+      setCategoriaNome(response.nome);
+      setCategoriaFoto(response.foto);
+    });
+  }, []);
 
   return (
     <Container>
+      <ContentRegistration>
+        <LogoWithTitle title="editar usuário" />
+      </ContentRegistration>
       <Content>
-        <LogoWithTitle title="Editar categoria" />
-
-        <InputText placeholder="foto"  value={categoriaFoto} onChangeText={setCategoriaFoto}/>
-        <InputText placeholder="nome"  value={categoriaNome} onChangeText={setCategoriaNome}/>
-        
-        <Button name="salvar" onPress={HandlePost} />
+        <InputText
+          placeholder="foto"
+          value={usuarioFoto}
+          onChangeText={setUsuarioFoto}
+        />
+        <InputText
+          placeholder="nome"
+          value={usuarioNome}
+          onChangeText={setUsuarioNome}
+        />
+        <InputText
+          placeholder="cpf"
+          value={usuarioCpf}
+          onChangeText={setUsuarioCpf}
+        />
+        <InputText
+          placeholder="data de nascimento"
+          value={usuarioDtNascimento}
+          onChangeText={setUsuarioDtNascimento}
+        />
+        <InputText
+          placeholder="login"
+          value={usuarioLogin}
+          onChangeText={setUsuarioLogin}
+        />
+        <InputPassword
+          placeholder="senha"
+          value={usuarioSenha}
+          onChangeText={setUsuarioSenha}
+        />
+      </Content>
+      <Content>
+        <Button onPress={HandlePost} name="salvar" />
         <ButtonBack onPress={backScreen} />
       </Content>
     </Container>

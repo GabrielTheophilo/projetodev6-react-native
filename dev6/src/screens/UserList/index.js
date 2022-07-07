@@ -6,11 +6,12 @@ import { useNavigation } from "@react-navigation/native";
 import { FlatList } from "react-native";
 import { useState, useEffect } from "react";
 import { getUser } from "../../services/users/index";
-import { Image, Alert } from "react-native";
+import { Image } from "react-native";
 import { styles } from "../../components/UserImage/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ContentButton, CusttomButton, UserText } from "./styles";
 import { deleteUser } from "./../../services/users/index";
+import InputPassword from "./../../components/InputPassword/Index";
 
 const UserList = () => {
   const nav = useNavigation();
@@ -22,8 +23,8 @@ const UserList = () => {
     nav.navigate("UserRegistration");
   }
 
-  function userEditScreen() {
-    nav.navigate("UserEdit");
+  function userEditScreen(_id) {
+    nav.navigate("UserEdit", { id: _id });
   }
 
   const [user, setUser] = useState([]);
@@ -42,15 +43,19 @@ const UserList = () => {
         <CusttomButton onPress={() => deleteUser(id)}>
           <Ionicons name="trash" size={20} color="#ff7800" />
         </CusttomButton>
-        <CusttomButton onPress={userEditScreen}>
+        <CusttomButton
+          onPress={() => {
+            userEditScreen(id);
+          }}
+        >
           <Ionicons name="ios-pencil" size={20} color="#ff7800" />
         </CusttomButton>
       </ContentButton>
       <UserText>{nome}</UserText>
       <UserText>{dtNascimento}</UserText>
       <UserText>{cpf}</UserText>
-      <UserText>login: {login}</UserText>
-      <UserText>senha: {senha}</UserText>
+      <UserText>{login}</UserText>
+      <InputPassword value={senha} />
     </>
   );
 
@@ -68,7 +73,7 @@ const UserList = () => {
 
   return (
     <Container>
-      <Header name="Usuário" />
+      <Header name="Admin" />
       <Content>
         <TitleScreen
           title="usuários"
