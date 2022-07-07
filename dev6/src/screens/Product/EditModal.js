@@ -1,27 +1,39 @@
 import React from "react";
-import { StyleSheet, Image, Text } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import InputText from "../../components/InputText/Index";
 import { Container, Content } from "../../components/GlobalStyles/styles";
+<<<<<<< Updated upstream
 import Api from "../../services/api";
 import { CusttomButton } from "./styles";
 
 const EditModal = ({ foto }) => {
+=======
+import ButtonBack from "../../components/ButtonBack";
+import Button from "../../components/Button";
+
+const EditModal = (props) => {
+>>>>>>> Stashed changes
   function HandlePut() {
     console.log('oi')
   }
   return (
     <Container>
       <Content>
-        <Image source={foto} style={styles.img} />
-        <InputText placeholder="Nova url do produto"></InputText>
-        <InputText placeholder="Digite o novo nome do produto"></InputText>
-        <InputText placeholder="Digite a nova descrição do produto"></InputText>
-        <InputText placeholder="Digite o novo valor do produto"></InputText>
-        <InputText placeholder="Nova quantidade em estoque do produto"></InputText>
+        <Image source={props.foto} style={styles.img} />
+        <InputText placeholder="Nova url do produto" />
+        <InputText placeholder="Digite o novo nome do produto" />
+        <InputText placeholder="Digite a nova descrição do produto" />
+        <InputText placeholder="Digite o novo valor do produto" />
+        <InputText placeholder="Nova quantidade em estoque do produto" />
+        <Button name="Enviar edição" />
+        <ButtonBack onPress={props.onPress} />
       </Content>
+<<<<<<< Updated upstream
       <CusttomButton onPress={HandlePut}>
         <Text> teste </Text>
       </CusttomButton>
+=======
+>>>>>>> Stashed changes
     </Container>
   );
 };
