@@ -26,19 +26,6 @@ const EditModal = (props) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    height: "80%",
-    width: "80%",
-    padding: "2%",
-    margin: 30,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  titleProduct: {
-    fontSize: 20,
-    fontWeight: "900",
-    textAlign: "center",
-  },
   img: {
     width: "100%",
     height: 320,
