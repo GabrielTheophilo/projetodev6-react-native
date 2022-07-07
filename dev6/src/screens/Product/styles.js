@@ -20,6 +20,12 @@ export const CusttomButton = styled.TouchableOpacity`
   margin-left: 2%;
 `;
 
+
+/* ====================================================================== */
+
+export const MainContainer = styled.View`
+flex-direction: column;
+`
 export const ContainerBtnOptions = styled.View`
 margin: 5%;
 flex-direction: row;
@@ -30,3 +36,10 @@ export const ContainerDscrpt = styled.View`
 flex-direction: row;
 margin: 2%;
 `
+
+export const txtTitle = styled.Text`
+font-size: 15;
+font-weight: bold;
+`
+
+

@@ -3,7 +3,13 @@ import { View, Text, Image, Modal, StyleSheet } from "react-native";
 import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { CusttomButton, ContainerBtnOptions, ContainerDscrpt, txtTitle } from "./styles";
+import {
+  MainContainer,
+  CusttomButton,
+  ContainerBtnOptions,
+  ContainerDscrpt,
+  txtTitle,
+} from "./styles";
 import EditModal from "./EditModal";
 import api from "../../services/api";
 
@@ -28,16 +34,14 @@ const ProductModal = ({
     );
   }
 
-
-
   return (
-    <Container >
+    <Container>
       <Header />
 
       <Content>
         <Image source={foto} style={styles.img} />
 
-        <View style={styles.mainContainer}>
+        <MainContainer>
           <View style={styles.containerDscrpt}>
             <Text style={styles.txtTitle}>Nome: {nome} </Text>
           </View>
@@ -57,7 +61,7 @@ const ProductModal = ({
           <View style={styles.containerDscrpt}>
             <Text style={styles.txtTitle}>Estoque: {qtdEstoque} unidades</Text>
           </View>
-        </View>
+        </MainContainer>
 
         <ContainerBtnOptions>
           <CusttomButton onPress={() => handleDelete(id)}>
@@ -82,11 +86,6 @@ const ProductModal = ({
 };
 
 const styles = StyleSheet.create({
-  containerBtnOptions: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    margin: "5%",
-  },
   mainContainer: {
     flexDirection: "column",
   },
