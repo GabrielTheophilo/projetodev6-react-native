@@ -1,7 +1,7 @@
 import { Container, Content } from "./../../components/GlobalStyles/styles";
 import LogoWithTitle from "../../components/LogoWithTitle";
 import UserImage from "../../components/UserImage";
-import {TextInput} from "react-native";
+import { TextInput } from "../../components/InputText/styles";
 import ButtonBack from "../../components/ButtonBack";
 import Button from "../../components/Button";
 import InputPassword from "../../components/InputPassword";
@@ -11,7 +11,7 @@ import {useState} from "react";
 
 
 
-const UserEdit = () => {
+const CategoryEdit = () => {
     const [categoriaNome, setCategoriaNome] = useState("");
     const [categoriaFoto, setCategoriaFoto] = useState("");
 
@@ -27,8 +27,6 @@ const UserEdit = () => {
         )
     }
 
-   
-    
     const nav = useNavigation();
     function backScreen() {
        nav.goBack();
@@ -37,9 +35,9 @@ const UserEdit = () => {
     <Container>
       <Content>
         <LogoWithTitle title="editar categoria" />
-       
-        <TextInput placeholder="foto"  value={categoriaFoto} onChangeText={setCategoriaFoto}/>
-        <TextInput placeholder="nome"  value={categoriaNome} onChangeText={setCategoriaNome}/>
+
+        <InputText placeholder="foto"  value={categoriaFoto} onChangeText={setCategoriaFoto}/>
+        <InputText placeholder="nome"  value={categoriaNome} onChangeText={setCategoriaNome}/>
         
         <Button name="salvar" onPress={HandlePost} />
         <ButtonBack onPress={backScreen} />
@@ -48,4 +46,4 @@ const UserEdit = () => {
   );
 };
 
-export default UserEdit;
+export default CategoryEdit;

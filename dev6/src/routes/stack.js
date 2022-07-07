@@ -1,15 +1,14 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-
 import Home from "../screens/home";
 import Login from "../screens/Login";
 import PasswordRecovery from "../screens/PasswordRecovery";
 import UserEdit from "../screens/UserEdit";
 import UserList from "../screens/UserList";
-import UserRegistration from "../screens/UserRegistration";
+import UserRegistration from "../screens/UserRegistration/index";
 import Splash from "../screens/Splash";
-import Category from "../screens/CategoryList/index";
+import CategoryList from "../screens/CategoryList/index";
 import CategoryEdit from "../screens/CategoryEdit/index";
 
 const { Screen, Navigator } = createNativeStackNavigator();
@@ -24,7 +23,7 @@ export function Stack() {
           headerShown: false,
         }}
       />
-       <Screen
+      <Screen
         name="Login"
         component={Login}
         options={{
@@ -67,18 +66,19 @@ export function Stack() {
         }}
       />
       <Screen
-      name="Category"
-      component={Category}
-      options={{
-        headerShown: false,
-      }} />
+        name="CategoryList"
+        component={CategoryList}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Screen
-      name="CategoryEdit"
-      component={CategoryEdit}
-      options={{
-        headerShown: false,
-      }} />
-    
+        name="CategoryEdit"
+        component={CategoryEdit}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Navigator>
   );
 }

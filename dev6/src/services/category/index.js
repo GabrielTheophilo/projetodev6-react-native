@@ -14,11 +14,11 @@ export const postCategoria = (categoria) => {
 });
 };
 
-export const putCategoria = () => {
+export const putCategoria = (id) => {
   return api.put(`/categoria/${id}`).then((response) => response.data);
 };
 
-export const deleteCategoria = () => {
+export const deleteCategoria = (id) => {
   return api.delete(`/categoria/${id}`).then((response) => response.data);
 };
 

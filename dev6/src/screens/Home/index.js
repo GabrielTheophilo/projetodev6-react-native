@@ -21,7 +21,7 @@ const Home = () => {
     nav.push("UserList");
   }
   function categoryScreen(){
-    nav.push("Category");
+    nav.push("CategoryList");
   }
   function backScreen() {
     nav.goBack();
@@ -37,7 +37,7 @@ const Home = () => {
         <MenuIcon name="produtos" iconName="md-briefcase" />
       </Content>
       <Content>
-        <MenuIcon name="categorias" iconName="search-sharp" />
+        <MenuIcon name="categorias" iconName="search-sharp" onPress={categoryScreen}/>
       </Content>
       <Content>
         <MenuIcon

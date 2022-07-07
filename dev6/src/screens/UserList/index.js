@@ -5,24 +5,25 @@ import TitleScreen from "../../components/TitleScreen";
 import { useNavigation } from "@react-navigation/native";
 import { FlatList } from "react-native";
 import { useState, useEffect } from "react";
-import {
-  getUser,
-  postUser,
-  putUser,
-  getByIdUser,
-  getUserCount,
-} from "../../services/users/index";
-import { Image } from "react-native";
+import { getUser } from "../../services/users/index";
+import { Image, Alert } from "react-native";
 import { styles } from "../../components/UserImage/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ContentButton, CusttomButton, UserText } from "./styles";
 import { deleteUser } from "./../../services/users/index";
-import api from "../../services/api";
 
 const UserList = () => {
   const nav = useNavigation();
+
   function backScreen() {
     nav.goBack();
+  }
+  function userRegistrationScreen() {
+    nav.navigate("UserRegistration");
+  }
+
+  function userEditScreen() {
+    nav.navigate("UserEdit");
   }
 
   const [user, setUser] = useState([]);
@@ -34,14 +35,14 @@ const UserList = () => {
     });
   }, []);
 
-  const Items = ({ foto, nome, dtNascimento, login, senha, cpf }) => (
+  const Items = ({ id, foto, nome, dtNascimento, login, senha, cpf }) => (
     <>
       <Image source={{ uri: foto }} style={styles.photo} />
       <ContentButton>
-        <CusttomButton>
+        <CusttomButton onPress={() => deleteUser(id)}>
           <Ionicons name="trash" size={20} color="#ff7800" />
         </CusttomButton>
-        <CusttomButton>
+        <CusttomButton onPress={userEditScreen}>
           <Ionicons name="ios-pencil" size={20} color="#ff7800" />
         </CusttomButton>
       </ContentButton>
@@ -55,6 +56,7 @@ const UserList = () => {
 
   const renderUser = ({ item }) => (
     <Items
+      id={item.id}
       foto={item.foto}
       nome={item.nome}
       cpf={item.cpf}
@@ -71,7 +73,7 @@ const UserList = () => {
         <TitleScreen
           title="usuários"
           icon={true}
-          onPress={() => console.log("handleToAdd")}
+          onPress={userRegistrationScreen}
         />
         <FlatList
           data={user}
