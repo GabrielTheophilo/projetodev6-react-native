@@ -4,8 +4,8 @@ export const getCategoria = () => {
   return api.get(`/categoria`).then((response) => response.data);
 };
 
-export const getCategoriaById = () => {
-  return api.getById(`/categoria/${id}`).then((response) => response.data);
+export const getCategoriaById = (id) => {
+  return api.get(`/categoria/${id}`).then((response) => response.data);
 };
 
 export const postCategoria = (categoria) => {
@@ -14,8 +14,10 @@ export const postCategoria = (categoria) => {
 });
 };
 
-export const putCategoria = (id) => {
-  return api.put(`/categoria/${id}`).then((response) => response.data);
+export const putCategoria = (id, categoria) => {
+  return api.put(`/categoria/${id}`, categoria).then((response) => response.data).catch(function (error) {
+    console.log(error);
+});
 };
 
 export const deleteCategoria = (id) => {

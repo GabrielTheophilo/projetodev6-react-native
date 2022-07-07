@@ -10,6 +10,8 @@ import UserRegistration from "../screens/UserRegistration/index";
 import Splash from "../screens/Splash";
 import CategoryList from "../screens/CategoryList/index";
 import CategoryEdit from "../screens/CategoryEdit/index";
+import CategoryAdd from "../screens/CategoryAdd/index";
+
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
@@ -79,6 +81,14 @@ export function Stack() {
           headerShown: false,
         }}
       />
+      <Screen
+        name="CategoryAdd"
+        component={CategoryAdd}
+        options={{
+          headerShown: false,
+        }}
+      />
+
     </Navigator>
   );
 }

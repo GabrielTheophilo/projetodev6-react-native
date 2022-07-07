@@ -7,51 +7,34 @@ import Button from "../../components/Button";
 import InputPassword from "../../components/InputPassword";
 import InputText from "../../components/InputText";
 import { useNavigation } from "@react-navigation/native";
-import { getCategoriaById, putCategoria } from "../../services/category";
-import {useState, useEffect} from "react";
+import { getCategoriaById, postCategoria } from "../../services/category";
+import {useState,useEffect} from "react";
 
 
 
-const CategoryEdit = ({route}) => {
+const CategoryAdd = () => {
     const [categoriaNome, setCategoriaNome] = useState("");
     const [categoriaFoto, setCategoriaFoto] = useState("");
-    
-    const [categoriaId] = useState(route.params.id);
-    
+
     const novaCategoria = {
         nome: categoriaNome,
         foto: categoriaFoto,
     }
 
     const HandlePost = () => {
-        putCategoria(
-            categoriaId ,novaCategoria
-        ).then((response)=>{
-          nav.goBack();
-        })
+        postCategoria(
+            novaCategoria
+        )
     }
 
     const nav = useNavigation();
     function backScreen() {
        nav.goBack();
     }
-
-
-
-    useEffect(() => {
-      getCategoriaById(categoriaId).then((response) => {
-        console.log(response);
-        setCategoriaNome(response.nome);
-        setCategoriaFoto(response.foto);
-      });
-    }, []);
-    
-        
-
   return (
     <Container>
       <Content>
-        <LogoWithTitle title="Editar categoria" />
+        <LogoWithTitle title="Adicionar categoria" />
 
         <InputText placeholder="foto"  value={categoriaFoto} onChangeText={setCategoriaFoto}/>
         <InputText placeholder="nome"  value={categoriaNome} onChangeText={setCategoriaNome}/>
@@ -63,4 +46,4 @@ const CategoryEdit = ({route}) => {
   );
 };
 
-export default CategoryEdit;
+export default CategoryAdd;
