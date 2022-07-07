@@ -42,25 +42,25 @@ const ProductModal = ({
         <Image source={foto} style={styles.img} />
 
         <MainContainer>
-          <View style={styles.containerDscrpt}>
+          <ContainerDscrpt>
             <Text style={styles.txtTitle}>Nome: {nome} </Text>
-          </View>
+          </ContainerDscrpt>
 
-          <View style={styles.containerDscrpt}>
+          <ContainerDscrpt>
             <Text style={styles.txtTitle}>ID: {id} </Text>
-          </View>
+          </ContainerDscrpt>
 
-          <View style={styles.containerDscrpt}>
+          <ContainerDscrpt>
             <Text style={styles.txtTitle}>Descrição: {descricao}</Text>
-          </View>
+          </ContainerDscrpt>
 
-          <View style={styles.containerDscrpt}>
+          <ContainerDscrpt>
             <Text style={styles.txtTitle}>Preço: {preco} R$</Text>
-          </View>
+          </ContainerDscrpt>
 
-          <View style={styles.containerDscrpt}>
+          <ContainerDscrpt>
             <Text style={styles.txtTitle}>Estoque: {qtdEstoque} unidades</Text>
-          </View>
+          </ContainerDscrpt>
         </MainContainer>
 
         <ContainerBtnOptions>
