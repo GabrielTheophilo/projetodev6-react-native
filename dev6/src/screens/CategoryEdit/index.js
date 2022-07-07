@@ -12,7 +12,7 @@ import {useState, useEffect} from "react";
 import styled from "styled-components/native";
 
 const StyledImage = styled.Image`
-  margin-left: 40;
+  margin-left: 50;
   width:200;
   height:200;
 `;
