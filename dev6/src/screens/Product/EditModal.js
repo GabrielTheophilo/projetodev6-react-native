@@ -5,6 +5,8 @@ import { Container, Content } from "../../components/GlobalStyles/styles";
 import ButtonBack from "../../components/ButtonBack";
 import Button from "../../components/Button";
 import { putProduct } from "../../services/product";
+import Header from "../../components/Header";
+import { useNavigation } from "@react-navigation/native";
 
 const EditModal = (props) => {
   const [url, setUrl] = useState("");
@@ -23,14 +25,20 @@ const EditModal = (props) => {
   };
 
   function HandlePut() {
-    putProduct(props.id, newProduct)
-    .then((response) => {
+    putProduct(props.id, newProduct).then((response) => {
       console.log(props.id);
     });
     console.log(newProduct);
   }
+
+  const nav = useNavigation();
+  function backScreen() {
+    nav.goBack();
+  }
+
   return (
     <Container>
+      <Header name="Admin" />
       <Content>
         <Image source={props.foto} style={styles.img} />
         <InputText
@@ -59,7 +67,7 @@ const EditModal = (props) => {
           onChangeText={setQuantity}
         />
         <Button name="Enviar edição" onPress={HandlePut} />
-        <ButtonBack onPress={props.onPress} />
+        <ButtonBack onPress={backScreen} />
       </Content>
     </Container>
   );

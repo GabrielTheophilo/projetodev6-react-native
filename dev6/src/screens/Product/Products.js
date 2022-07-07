@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Image, StyleSheet, Modal } from "react-native";
+import { Image, StyleSheet, Modal } from "react-native";
 import ProductModal from "./ProductModal";
 import Button from "../../components/Button";
 import { TitleProduct, Container } from "./styles";

@@ -5,8 +5,10 @@ import { Container, Content } from "../../components/GlobalStyles/styles";
 import ButtonBack from "../../components/ButtonBack";
 import Button from "../../components/Button";
 import { postProduct } from "../../services/product";
+import Header from '../../components/Header'
+import { useNavigation } from "@react-navigation/native";
 
-const PostModal = () => {
+const PostModal = (props) => {
   const [url, setUrl] = useState("");
   const [productName, setProductName] = useState("");
   const [description, setDescription] = useState("");
@@ -43,8 +45,14 @@ const PostModal = () => {
     }
   };
 
+  const nav = useNavigation();
+  function backScreen() {
+    nav.goBack();
+  }
+
   return (
     <Container>
+       <Header name='Admin' />
       <Content>
         <InputText
           placeholder="URL do produto"
@@ -72,7 +80,7 @@ const PostModal = () => {
           onChangeText={setQuantity}
         />
         <Button name="salvar" onPress={AddNewProduct} />
-        <ButtonBack />
+        <ButtonBack onPress={backScreen}/>
       </Content>
     </Container>
   );
