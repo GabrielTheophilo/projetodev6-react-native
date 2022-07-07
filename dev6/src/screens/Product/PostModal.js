@@ -32,7 +32,7 @@ const PostModal = () => {
       Alert.alert("PREENCHA TODOS OS CAMPOS");
       alert("PREENCHA TODOS OS CAMPOS");
     } else {
-       await postProduct(newProduct);
+      await postProduct(newProduct);
       setUrl("");
       setDescription("");
       setProductName("");
