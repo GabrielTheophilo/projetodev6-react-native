@@ -4,6 +4,8 @@ import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { CusttomButton } from "./styles";
+import EditModal from "./EditModal";
+import api from "../../services/api";
 
 const ProductModal = ({
   nome,
@@ -19,6 +21,14 @@ const ProductModal = ({
   function openModalEdit() {
     setVisibleModalEdit(true);
   }
+
+  function handleDelete(idDelete) {
+    api.delete(
+      `https://reactnative.herokuapp.com/reactnative/produto/${idDelete}`
+    );
+  }
+
+
 
   return (
     <Container style={styles.container}>
@@ -50,7 +60,7 @@ const ProductModal = ({
         </View>
 
         <View style={styles.containerBtnOptions}>
-          <CusttomButton>
+          <CusttomButton onPress={() => handleDelete(id)}>
             <Ionicons name="trash" size={30} color="#ff7800" />
           </CusttomButton>
 
@@ -62,7 +72,10 @@ const ProductModal = ({
             <Ionicons name="arrow-back-outline" size={30} color="#ff7800" />
           </CusttomButton>
         </View>
-        <Modal animationType="fade" visible={visibleModalEdit}></Modal>
+        <Modal animationType="fade" visible={visibleModalEdit}>
+          {" "}
+          <EditModal foto={foto} />{" "}
+        </Modal>
       </Content>
     </Container>
   );

@@ -19,3 +19,5 @@ export const CusttomButton = styled.TouchableOpacity`
   margin-right: 2%;
   margin-left: 2%;
 `;
+
+
