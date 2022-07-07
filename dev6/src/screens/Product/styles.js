@@ -20,4 +20,13 @@ export const CusttomButton = styled.TouchableOpacity`
   margin-left: 2%;
 `;
 
+export const ContainerBtnOptions = styled.View`
+margin: 5%;
+flex-direction: row;
+justify-content: space-around;
+`
 
+export const ContainerDscrpt = styled.View`
+flex-direction: row;
+margin: 2%;
+`

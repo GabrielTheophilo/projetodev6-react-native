@@ -3,7 +3,7 @@ import { View, Text, Image, Modal, StyleSheet } from "react-native";
 import { Container, Content } from "../../components/GlobalStyles/styles";
 import Header from "../../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { CusttomButton } from "./styles";
+import { CusttomButton, ContainerBtnOptions, ContainerDscrpt, txtTitle } from "./styles";
 import EditModal from "./EditModal";
 import api from "../../services/api";
 
@@ -31,7 +31,7 @@ const ProductModal = ({
 
 
   return (
-    <Container style={styles.container}>
+    <Container >
       <Header />
 
       <Content>
@@ -59,7 +59,7 @@ const ProductModal = ({
           </View>
         </View>
 
-        <View style={styles.containerBtnOptions}>
+        <ContainerBtnOptions>
           <CusttomButton onPress={() => handleDelete(id)}>
             <Ionicons name="trash" size={30} color="#ff7800" />
           </CusttomButton>
@@ -71,7 +71,7 @@ const ProductModal = ({
           <CusttomButton onPress={onPress}>
             <Ionicons name="arrow-back-outline" size={30} color="#ff7800" />
           </CusttomButton>
-        </View>
+        </ContainerBtnOptions>
         <Modal animationType="fade" visible={visibleModalEdit}>
           {" "}
           <EditModal foto={foto} />{" "}
