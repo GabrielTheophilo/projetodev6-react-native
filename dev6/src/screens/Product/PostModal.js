@@ -4,12 +4,8 @@ import InputText from "../../components/InputText/Index";
 import { Container, Content } from "../../components/GlobalStyles/styles";
 import Api from "../../services/api";
 import { CusttomButton } from "./styles";
-import ButtonBack from "../../components/ButtonBack";
 
-const EditModal = ({ foto, onPress }) => {
-  function HandlePut() {
-    console.log("oi");
-  }
+const PostModal = () => {
   return (
     <Container>
       <Content>
@@ -23,7 +19,6 @@ const EditModal = ({ foto, onPress }) => {
       <CusttomButton onPress={HandlePut}>
         <Text> teste </Text>
       </CusttomButton>
-      <ButtonBack onPress={onPress} />
     </Container>
   );
 };
@@ -37,5 +32,4 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 });
-
-export default EditModal;
+export default PostModal;
