@@ -7,8 +7,6 @@
 <img src="https://media0.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif?cid=ecf05e47v1nyr6koc81jn7rud8p2z3kf7tpmolu7ccp3xi3w&rid=giphy.gif&ct=g" />
 
 
-
-<h2>Para visualizar a documentação do projeto, visualize a pasta <a href="">Docs</a><br><br><br><br><br><br>Insira conteúdo aqui<br><br><br><br><br><br></h2>
 <h2>Para rodar este código na sua máquina, com nodejs e yarn instalados, siga o passo a passo abaixo </h2>
 
 
